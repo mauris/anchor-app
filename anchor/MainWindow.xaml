@@ -1,11 +1,27 @@
 ﻿<Window x:Class="anchor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Anchor for Windows - web apps made easy" Height="350" Width="525">
+        Title="Anchor for Windows - web apps made easy" Height="500" Width="300" Background="{DynamicResource BackgroundBrush}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="310*" />
-            <ColumnDefinition Width="193*" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <ListBox Name="lstSites" ItemsSource="{Binding}" Margin="20">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Grid.Column="0" Width="16" Height="16" Fill="White"></Rectangle>
+                        <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text=".dev" Grid.Column="2" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

@@ -543,7 +543,7 @@
     <!--ListBox Item-->
     <Style x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}">
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Background" Value="{DynamicResource RecessedBrush}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontFamily" Value="{DynamicResource MessageFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
@@ -571,8 +571,8 @@
                 <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
             </MultiTrigger>
             <Trigger Property="IsSelected" Value="true">
-                <Setter Property="Background" Value="{DynamicResource ListSelectionGrad}" />
-                <Setter Property="Foreground" Value="{DynamicResource ListSelectedTextBrush}" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Foreground" Value="{DynamicResource DarkBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{DynamicResource DisabledTextBrush}" />
@@ -582,7 +582,7 @@
 
     <!--ListBox Style-->
     <Style x:Key="{x:Type ListBox}" TargetType="{x:Type ListBox}">
-        <Setter Property="BorderBrush" Value="{DynamicResource DarkBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource Text1Brush}" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
