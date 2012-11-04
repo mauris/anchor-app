@@ -1,0 +1,11 @@
+﻿<Window x:Class="anchor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Anchor for Windows - web apps made easy" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310*" />
+            <ColumnDefinition Width="193*" />
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>
