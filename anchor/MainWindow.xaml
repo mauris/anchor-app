@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Anchor for Windows - web apps made easy" Height="500" Width="300" Background="{DynamicResource BackgroundBrush}">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <ListBox Name="lstSites" ItemsSource="{Binding}" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Name="pnlToolbar">
+            
+        </StackPanel>
+        <ListBox Name="lstSites" ItemsSource="{Binding}" Grid.Row="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="10">

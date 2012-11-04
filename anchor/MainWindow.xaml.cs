@@ -27,6 +27,8 @@ namespace anchor
         {
             InitializeComponent();
 
+            pnlToolbar.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/toolbar-background.png")));
+
             lstSites.DataContext = entries;
         }
     }
