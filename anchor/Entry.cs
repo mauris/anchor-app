@@ -5,6 +5,7 @@ using System.Text;
 
 namespace anchor
 {
+    [Serializable]
     class Entry
     {
 
