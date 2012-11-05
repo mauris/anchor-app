@@ -30,6 +30,15 @@
                     <TextBox Grid.Row="1" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
                     <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="2" FontFamily="Segoe UI" FontSize="11"></TextBlock>
                     <TextBox Grid.Row="3" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Add" Grid.Column="0"></Button>
+                        <Button Content="Cancel" Grid.Column="2"></Button>
+                    </Grid>
                 </Grid>
             </StackPanel>
             <ListBox Name="lstSites" ItemsSource="{Binding}">
