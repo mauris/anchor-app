@@ -28,7 +28,21 @@ namespace anchor
 
             pnlToolbar.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/toolbar-background.png")));
             lstSites.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/toolbar-shadow.png"))) { Stretch = Stretch.None, AlignmentY = AlignmentY.Top, AlignmentX = AlignmentX.Left, Viewport = new Rect(0, 0, 20, 1000000), ViewportUnits = BrushMappingMode.Absolute, TileMode = TileMode.FlipXY };
+        }
 
+        ~MainWindow()
+        {
+            DataFile.Write("entries.bin", entries);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            loadEntries();
+        }
+
+        private void loadEntries()
+        {
+            entries = DataFile.Read<List<Entry>>("entries.bin");
             lstSites.DataContext = entries;
         }
     }
