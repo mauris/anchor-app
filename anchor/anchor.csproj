@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataFile.cs" />
     <Compile Include="HostEditor.cs" />
     <Compile Include="Settings.cs" />
     <Page Include="AppStyle.xaml">
