@@ -29,27 +29,44 @@
                 <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
                             AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" />
             </StackPanel.Background>
-            <StackPanel Name="pnlAddHost" Visibility="Visible" Margin="20,20,25,0">
+            <StackPanel Name="pnlAddHost" Visibility="Visible">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                    <TextBox Grid.Row="1" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                    <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="2" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                    <TextBox Grid.Row="3" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                    <Grid Grid.Row="4">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Button Content="Add" Name="btnAddHost" Grid.Column="0"></Button>
-                        <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2"></Button>
+                    <Grid Margin="20,20,25,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                        <TextBox Grid.Row="1" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
+                            <TextBox.Template>
+                                <ControlTemplate>
+                                    <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                                            <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 6,0,0" Foreground="Gray" Cursor="IBeam" />
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </TextBox.Template>
+                        </TextBox>
+                        <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="2" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                        <TextBox Grid.Row="3" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5"></Button>
+                            <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5"></Button>
+                        </Grid>
                     </Grid>
                 </Grid>
             </StackPanel>
