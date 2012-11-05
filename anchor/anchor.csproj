@@ -113,6 +113,12 @@
   <ItemGroup>
     <Resource Include="Assets\toolbar-shadow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\popper.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
