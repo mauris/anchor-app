@@ -20,7 +20,9 @@ namespace anchor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Entry> entries = new List<Entry>();
+        private List<Entry> entries;
+
+        private Settings settings;
 
         public MainWindow()
         {
@@ -31,16 +33,36 @@ namespace anchor
         ~MainWindow()
         {
             DataFile.Write("entries.bin", entries);
+            DataFile.Write("settings.bin", settings);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             loadEntries();
+            loadSettings();
+        }
+
+        private void restartApache()
+        {
+
+        }
+
+        private void loadSettings()
+        {
+            settings = DataFile.Read<Settings>("settings.bin");
+            if (settings == null)
+            {
+                settings = new Settings();
+            }
         }
 
         private void loadEntries()
         {
             entries = DataFile.Read<List<Entry>>("entries.bin");
+            if (entries == null)
+            {
+                entries = new List<Entry>();
+            }
             lstSites.DataContext = entries;
         }
 
