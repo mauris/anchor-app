@@ -93,5 +93,18 @@ namespace anchor
                 pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
             }
         }
+
+        private void btnAddHost_Click(object sender, RoutedEventArgs e)
+        {
+            string hostName = txtAddHostName.Text.Trim();
+            string path = txtAddHostPath.Text.Trim();
+
+            entries.Add(new Entry { Name = hostName, Path = path });
+            lstSites.DataContext = entries;
+
+            txtAddHostName.Text = "";
+            txtAddHostPath.Text = "";
+            pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
+        }
     }
 }
