@@ -361,7 +361,7 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="MinWidth" Value="50" />
-        <Setter Property="MinHeight" Value="18" />
+        <Setter Property="MinHeight" Value="28" />
         <Setter Property="FontFamily" Value="{DynamicResource MessageFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
@@ -376,7 +376,7 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Border x:Name="HighlightBackground" CornerRadius="2" RenderTransformOrigin="0.5,1" Grid.Row="0" Margin="1,1,1,0" Background="{DynamicResource ButtonSelectionGrad}" Opacity="0.15" />
+                            <Border x:Name="HighlightBackground" CornerRadius="5" RenderTransformOrigin="0.5,1" Grid.Row="0" Margin="1,1,1,0" Background="{DynamicResource ButtonSelectionGrad}" Opacity="0.15" />
                             <ContentPresenter x:Name="Content" Grid.RowSpan="2" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}" RecognizesAccessKey="true" />
                         </Grid>
                     </Border>
@@ -487,7 +487,7 @@
         <Setter Property="Foreground" Value="#595959" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="MinWidth" Value="50" />
-        <Setter Property="MinHeight" Value="18" />
+        <Setter Property="MinHeight" Value="40" />
         <Setter Property="FontFamily" Value="{DynamicResource MessageFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
@@ -501,7 +501,7 @@
                                 <RowDefinition Height="0.593*" />
                                 <RowDefinition Height="0.407*" />
                             </Grid.RowDefinitions>
-                            <Border Name="HighlightBackground" CornerRadius="3" Grid.Row="0" Margin="1,1,1,1" Opacity="0.5" Background="#FFFFFF" />
+                            <Border Name="HighlightBackground" CornerRadius="5" Grid.Row="0" Margin="1,1,1,1" Opacity="0.5" Background="#FFFFFF" />
                             <ContentPresenter Name="Content" Grid.RowSpan="2" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="true" Margin="{TemplateBinding Padding}" />
                         </Grid>
                     </Border>
