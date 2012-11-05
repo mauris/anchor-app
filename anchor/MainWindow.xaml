@@ -11,6 +11,18 @@
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/toolbar-background.png" />
             </StackPanel.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Grid.Column="2">
+                    <Button.Content>
+                        <Image Source="Assets/plus.png" Width="12" Height="12"></Image>
+                    </Button.Content>
+                </Button>
+            </Grid>
         </StackPanel>
         <StackPanel Grid.Row="1" Name="pnlContent">
             <StackPanel.Background>
