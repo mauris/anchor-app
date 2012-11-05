@@ -27,7 +27,7 @@ namespace anchor
             InitializeComponent();
 
             pnlToolbar.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/toolbar-background.png")));
-            lstSites.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/toolbar-shadow.png"))) { Stretch = Stretch.None, AlignmentY = AlignmentY.Top, AlignmentX = AlignmentX.Left, Viewport = new Rect(0, 0, 20, 1000000), ViewportUnits = BrushMappingMode.Absolute, TileMode = TileMode.FlipXY };
+            pnlContent.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/toolbar-shadow.png"))) { Stretch = Stretch.None, AlignmentY = AlignmentY.Top, AlignmentX = AlignmentX.Left, Viewport = new Rect(0, 0, 20, 1000000), ViewportUnits = BrushMappingMode.Absolute, TileMode = TileMode.FlipXY };
         }
 
         ~MainWindow()
