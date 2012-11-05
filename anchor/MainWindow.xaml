@@ -1,7 +1,7 @@
 ﻿<Window x:Class="anchor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Anchor for Windows - web apps made easy" Height="500" Width="300" Background="{DynamicResource BackgroundBrush}">
+        Title="Anchor for Windows - web apps made easy" Height="500" Width="300" Background="{DynamicResource BackgroundBrush}" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -15,8 +15,7 @@
                 <DataTemplate>
                     <Grid Margin="10">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25" />
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="40" />
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
