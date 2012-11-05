@@ -43,5 +43,17 @@ namespace anchor
             entries = DataFile.Read<List<Entry>>("entries.bin");
             lstSites.DataContext = entries;
         }
+
+        private void btnAddHostToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (pnlAddHost.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                pnlAddHost.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="40" />
                 </Grid.ColumnDefinitions>
-                <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Grid.Column="2">
+                <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Grid.Column="2" Click="btnAddHostToggle_Click">
                     <Button.Content>
                         <Image Source="Assets/plus.png" Width="12" Height="12"></Image>
                     </Button.Content>
@@ -29,7 +29,7 @@
                 <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
                             AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" />
             </StackPanel.Background>
-            <StackPanel Name="pnlAddHost" Visibility="Visible">
+            <StackPanel Name="pnlAddHost" Visibility="Collapsed">
                 <Grid>
                     <Grid Margin="20,20,25,0">
                         <Grid.RowDefinitions>
