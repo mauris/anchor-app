@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace anchor
 {
@@ -20,9 +22,9 @@ namespace anchor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Entry> entries;
+        private ObservableCollection<Entry> entries = new ObservableCollection<Entry>();
 
-        private Settings settings;
+        private Settings settings = new Settings();
 
         public MainWindow()
         {
@@ -49,21 +51,35 @@ namespace anchor
 
         private void loadSettings()
         {
-            settings = DataFile.Read<Settings>("settings.bin");
-            if (settings == null)
+            try
             {
-                settings = new Settings();
+                settings = DataFile.Read<Settings>("settings.bin");
+                if (settings == null)
+                {
+                    settings = new Settings();
+                }
+            }
+            catch (IOException)
+            {
+
             }
         }
 
         private void loadEntries()
         {
-            entries = DataFile.Read<List<Entry>>("entries.bin");
-            if (entries == null)
+            try
             {
-                entries = new List<Entry>();
+                entries = DataFile.Read<ObservableCollection<Entry>>("entries.bin");
+                if (entries == null)
+                {
+                    entries = new ObservableCollection<Entry>();
+                }
+                lstSites.DataContext = entries;
             }
-            lstSites.DataContext = entries;
+            catch (IOException)
+            {
+
+            }
         }
 
         private void btnAddHostToggle_Click(object sender, RoutedEventArgs e)
