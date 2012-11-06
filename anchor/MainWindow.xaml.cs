@@ -27,6 +27,8 @@ namespace anchor
 
         private Settings settings = new Settings();
 
+        HostEditor hostEditor = new HostEditor("C:\\hosts-test");
+
         public MainWindow()
         {
             InitializeComponent();
@@ -100,12 +102,23 @@ namespace anchor
             string hostName = txtAddHostName.Text.Trim();
             string path = txtAddHostPath.Text.Trim();
 
-            entries.Add(new Entry { Name = hostName, Path = path });
-            lstSites.DataContext = entries;
+            if (hostName == "")
+            {
+                MessageBox.Show("You must enter a name for the host", "Add Host Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else if (path == "")
+            {
+                MessageBox.Show("You must enter a folder path to be the root folder of the host", "Add Host Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else
+            {
+                entries.Add(new Entry { Name = hostName, Path = path });
+                lstSites.DataContext = entries;
 
-            txtAddHostName.Text = "";
-            txtAddHostPath.Text = "";
-            pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
+                txtAddHostName.Text = "";
+                txtAddHostPath.Text = "";
+                pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         private void btnHostOpen_Click(object sender, RoutedEventArgs e)
