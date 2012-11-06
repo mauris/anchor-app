@@ -83,6 +83,7 @@ namespace anchor
 
         private void btnAddHostToggle_Click(object sender, RoutedEventArgs e)
         {
+            lstSites.SelectedIndex = -1;
             if (pnlAddHost.Visibility == System.Windows.Visibility.Collapsed)
             {
                 pnlAddHost.Visibility = System.Windows.Visibility.Visible;
