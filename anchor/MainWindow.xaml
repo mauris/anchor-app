@@ -31,30 +31,60 @@
                 <Rectangle Grid.Column="0" Width="16" Height="16" Fill="White"></Rectangle>
                 <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
                 <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
-                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="Auto">
+                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0, 5, 0, 0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0">
-                        <Image Source="Assets/world.png" Width="16" Height="16" />
-                        <Hyperlink>
-                            Open
-                        </Hyperlink>
-                    </TextBlock>
-                    <TextBlock Grid.Column="1">
-                        <Image Source="Assets/folder.png" Width="16" Height="16" />
-                        <Hyperlink>
-                            Browse
-                        </Hyperlink>
-                    </TextBlock>
-                    <TextBlock Grid.Column="2">
-                        <Image Source="Assets/bin.png" Width="16" Height="16" />
-                        <Hyperlink>
-                            Delete
-                        </Hyperlink>
-                    </TextBlock>
+                    <Label Grid.Column="0" Margin="0, 0, 10, 0">
+                        <Label.ContentTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="Assets/world.png" Width="16" Height="16" />
+                                    <TextBlock Grid.Column="1" Margin="3,3,0,0" FontSize="10">
+                                        Open
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </Label.ContentTemplate>
+                    </Label>
+                    <Label Grid.Column="1" Margin="0, 0, 10, 0">
+                        <Label.ContentTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="Assets/folder.png" Width="16" Height="16" />
+                                    <TextBlock Grid.Column="1" Margin="3,3,0,0" FontSize="10">
+                                        Browse
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </Label.ContentTemplate>
+                    </Label>
+                    <Label Grid.Column="2" Margin="0, 0, 10, 0">
+                        <Label.ContentTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="Assets/bin.png" Width="16" Height="16" />
+                                    <TextBlock Grid.Column="1" Margin="3,3,0,0" FontSize="10">
+                                        Delete
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </Label.ContentTemplate>
+                    </Label>
                 </Grid>
             </Grid>
         </DataTemplate>
