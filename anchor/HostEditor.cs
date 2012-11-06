@@ -31,6 +31,11 @@ namespace anchor
 
         ~HostEditor()
         {
+            this.update();
+        }
+
+        public void update()
+        {
             if (changed)
             {
                 if (File.Exists(pathName + ".bak"))
