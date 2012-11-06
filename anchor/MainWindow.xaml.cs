@@ -29,7 +29,6 @@ namespace anchor
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         ~MainWindow()

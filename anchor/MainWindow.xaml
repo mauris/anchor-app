@@ -13,12 +13,12 @@
                 </Grid.ColumnDefinitions>
                 <Rectangle Grid.Column="0" Width="16" Height="16" Fill="White"></Rectangle>
                 <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
-                <TextBlock Text=".dev" Grid.Column="2" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="SelectedTemplate">
-            <Grid Margin="10">
+            <Grid Margin="10" HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40" />
                     <ColumnDefinition Width="Auto" />
@@ -30,17 +30,52 @@
                 </Grid.RowDefinitions>
                 <Rectangle Grid.Column="0" Width="16" Height="16" Fill="White"></Rectangle>
                 <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
-                <TextBlock Text=".dev" Grid.Column="2" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
-                <Grid Grid.Row="1">
-                    
+                <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0">
+                        <Image Source="Assets/world.png" Width="16" Height="16" />
+                        <Hyperlink>
+                            Open
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Column="1">
+                        <Image Source="Assets/folder.png" Width="16" Height="16" />
+                        <Hyperlink>
+                            Browse
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Column="2">
+                        <Image Source="Assets/bin.png" Width="16" Height="16" />
+                        <Hyperlink>
+                            Delete
+                        </Hyperlink>
+                    </TextBlock>
                 </Grid>
             </Grid>
         </DataTemplate>
 
         <Style TargetType="{x:Type ListBoxItem}" x:Key="ContainerStyle">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                             Color="#484848"/>
+            </Style.Resources>
             <Setter Property="ContentTemplate" Value="{StaticResource ItemTemplate}" />
             <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="true" />
+                        <Condition Property="IsSelected" Value="false" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="{DynamicResource ButtonOverBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
+                </MultiTrigger>
+                <Trigger Property="IsSelected" Value="true">
+                    <Setter Property="Background" Value="#484848" />
                     <Setter Property="ContentTemplate" Value="{StaticResource SelectedTemplate}" />
                 </Trigger>
             </Style.Triggers>
@@ -115,7 +150,8 @@
                     </Grid>
                 </Grid>
             </StackPanel>
-            <ListBox Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}"></ListBox>
+            <ListBox Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch">
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>
