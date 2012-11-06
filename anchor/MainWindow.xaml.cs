@@ -111,7 +111,10 @@ namespace anchor
         private void btnHostOpen_Click(object sender, RoutedEventArgs e)
         {
             Entry entry = (Entry)lstSites.SelectedItem;
-            Process.Start("http://" + entry.Name + ".dev/");
+            if (entry != null)
+            {
+                Process.Start("http://" + entry.Name + ".dev/");
+            }
         }
 
         private void btnHostBrowse_Click(object sender, RoutedEventArgs e)
