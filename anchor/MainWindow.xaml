@@ -37,8 +37,14 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Margin="0, 0, 15, 0">
-                        <Label.ContentTemplate>
+                    <Button Grid.Column="0" Margin="0, 0, 15, 0" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -51,10 +57,16 @@
                                     </TextBlock>
                                 </Grid>
                             </DataTemplate>
-                        </Label.ContentTemplate>
-                    </Label>
-                    <Label Grid.Column="1" Margin="0, 0, 15, 0">
-                        <Label.ContentTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                    <Button Grid.Column="1" Margin="0, 0, 15, 0" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -67,10 +79,16 @@
                                     </TextBlock>
                                 </Grid>
                             </DataTemplate>
-                        </Label.ContentTemplate>
-                    </Label>
-                    <Label Grid.Column="2" Margin="0, 0, 15, 0">
-                        <Label.ContentTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                    <Button Grid.Column="2" Margin="0, 0, 15, 0" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -83,8 +101,8 @@
                                     </TextBlock>
                                 </Grid>
                             </DataTemplate>
-                        </Label.ContentTemplate>
-                    </Label>
+                        </Button.ContentTemplate>
+                    </Button>
                 </Grid>
             </Grid>
         </DataTemplate>
