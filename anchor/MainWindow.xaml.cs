@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
+using anchor.Drivers;
 
 namespace anchor
 {
@@ -28,6 +29,8 @@ namespace anchor
         private Settings settings = new Settings();
 
         HostEditor hostEditor = new HostEditor("C:\\hosts-test");
+
+        Driver driver;
 
         public MainWindow()
         {
@@ -44,11 +47,13 @@ namespace anchor
         {
             loadEntries();
             loadSettings();
+            settings.WampServerPath = @"C:\wamp";
+            driver = new WampServer(settings.WampServerPath);            
         }
 
         private void restartApache()
         {
-
+            Process.Start(this.driver.ApacheRestartCommand);
         }
 
         private void loadSettings()
