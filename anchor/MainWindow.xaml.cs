@@ -119,7 +119,11 @@ namespace anchor
 
         private void btnHostBrowse_Click(object sender, RoutedEventArgs e)
         {
-
+            Entry entry = (Entry)lstSites.SelectedItem;
+            if (entry != null)
+            {
+                Process.Start(entry.Path);
+            }
         }
 
         private void btnHostDelete_Click(object sender, RoutedEventArgs e)
