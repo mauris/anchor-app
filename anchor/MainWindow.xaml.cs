@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Diagnostics;
 
 namespace anchor
 {
@@ -105,6 +106,21 @@ namespace anchor
             txtAddHostName.Text = "";
             txtAddHostPath.Text = "";
             pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void btnHostOpen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHostBrowse_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHostDelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
