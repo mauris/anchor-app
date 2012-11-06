@@ -37,7 +37,7 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Margin="0, 0, 10, 0">
+                    <Label Grid.Column="0" Margin="0, 0, 15, 0">
                         <Label.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -46,14 +46,14 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="Assets/world.png" Width="16" Height="16" />
-                                    <TextBlock Grid.Column="1" Margin="3,3,0,0" FontSize="10">
+                                    <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
                                         Open
                                     </TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </Label.ContentTemplate>
                     </Label>
-                    <Label Grid.Column="1" Margin="0, 0, 10, 0">
+                    <Label Grid.Column="1" Margin="0, 0, 15, 0">
                         <Label.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -62,14 +62,14 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="Assets/folder.png" Width="16" Height="16" />
-                                    <TextBlock Grid.Column="1" Margin="3,3,0,0" FontSize="10">
+                                    <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
                                         Browse
                                     </TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </Label.ContentTemplate>
                     </Label>
-                    <Label Grid.Column="2" Margin="0, 0, 10, 0">
+                    <Label Grid.Column="2" Margin="0, 0, 15, 0">
                         <Label.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -78,7 +78,7 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="Assets/bin.png" Width="16" Height="16" />
-                                    <TextBlock Grid.Column="1" Margin="3,3,0,0" FontSize="10">
+                                    <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
                                         Delete
                                     </TextBlock>
                                 </Grid>
@@ -141,7 +141,7 @@
             </StackPanel.Background>
             <StackPanel Name="pnlAddHost" Visibility="Collapsed">
                 <Grid>
-                    <Grid Margin="20,20,25,0">
+                    <Grid Margin="20,15,25,15">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
