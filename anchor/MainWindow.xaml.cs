@@ -128,7 +128,12 @@ namespace anchor
 
         private void btnHostDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            Entry entry = (Entry)lstSites.SelectedItem;
+            if (entry != null)
+            {
+                entries.Remove(entry);
+                lstSites.DataContext = entries;
+            }
         }
     }
 }
