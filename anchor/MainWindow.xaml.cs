@@ -131,8 +131,12 @@ namespace anchor
             Entry entry = (Entry)lstSites.SelectedItem;
             if (entry != null)
             {
-                entries.Remove(entry);
-                lstSites.DataContext = entries;
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete \"" + entry.Name + ".dev\"?", "Delete Host", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    entries.Remove(entry);
+                    lstSites.DataContext = entries;
+                }
             }
         }
     }
