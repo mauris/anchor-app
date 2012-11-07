@@ -28,7 +28,7 @@ namespace anchor
 
         private Settings settings = new Settings();
 
-        HostEditor hostEditor = new HostEditor("C:\\hosts-test");
+        HostEditor hostEditor = new HostEditor(System.IO.Path.Combine(Environment.GetEnvironmentVariable("SystemRoot"), "System32\\drivers\\etc\\hosts"));
 
         Driver driver;
 
@@ -167,6 +167,7 @@ namespace anchor
                 }
             }
         }
+
         private void btnAddHostCancel_Click(object sender, RoutedEventArgs e)
         {
             pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
