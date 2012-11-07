@@ -54,6 +54,7 @@ namespace anchor
         private void restartApache()
         {
             driver.restartServer();
+            Process.Start(new ProcessStartInfo("ipconfig", "/flushdns"));
         }
 
         private void loadSettings()
