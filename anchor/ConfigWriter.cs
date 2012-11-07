@@ -21,13 +21,13 @@ namespace anchor
             StreamWriter writer = new StreamWriter(file);
             writer.WriteLine("NameVirtualHost 127.0.0.1");
             writer.WriteLine("<VirtualHost 127.0.0.1>");
-            writer.WriteLine("    ServerName 127.0.0.1:80");
+            writer.WriteLine("    ServerName localhost");
             writer.WriteLine("    DocumentRoot '" + root + "'");
             writer.WriteLine("</VirtualHost>");
             foreach(Entry entry in entries)
             {
                 writer.WriteLine("<VirtualHost 127.0.0.1>");
-                writer.WriteLine("    ServerName " + entry.Name + ".dev:80");
+                writer.WriteLine("    ServerName " + entry.Name + ".dev");
                 writer.WriteLine("    DocumentRoot '" + entry.Path + "'");
                 writer.WriteLine("</VirtualHost>");
                 writer.WriteLine("<Directory \"" + entry.Path + "\">");
