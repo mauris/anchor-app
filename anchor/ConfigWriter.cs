@@ -35,6 +35,7 @@ namespace anchor
                 writer.WriteLine("    Order Deny,Allow");
                 writer.WriteLine("</VirtualHost>");
             }
+            writer.Close();
         }
 
     }

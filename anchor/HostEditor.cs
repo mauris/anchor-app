@@ -52,6 +52,7 @@ namespace anchor
                         {
                             writer.WriteLine(entry.IpAddress + " " + entry.HostName + (entry.Comment != null ? " # " + entry.Comment : ""));
                         }
+                        writer.Close();
                     }
                 }
             }
@@ -79,6 +80,7 @@ namespace anchor
                             entries.Add(entry);
                         }
                     }
+                    reader.Close();
                 }
             }
             changed = false;
