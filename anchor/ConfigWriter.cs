@@ -21,7 +21,7 @@ namespace anchor
             StreamWriter writer = new StreamWriter(file);
             writer.WriteLine("NameVirtualHost 127.0.0.1");
             writer.WriteLine("<VirtualHost 127.0.0.1>");
-            writer.WriteLine("    ServerName localhost:80");
+            writer.WriteLine("    ServerName 127.0.0.1:80");
             writer.WriteLine("    DocumentRoot '" + root + "'");
             writer.WriteLine("</VirtualHost>");
             foreach(Entry entry in entries)
@@ -33,7 +33,7 @@ namespace anchor
                 writer.WriteLine("<Directory \"" + entry.Path + "\">");
                 writer.WriteLine("    Allow from all");
                 writer.WriteLine("    Order Deny,Allow");
-                writer.WriteLine("</VirtualHost>");
+                writer.WriteLine("</Directory>");
             }
             writer.Close();
         }
