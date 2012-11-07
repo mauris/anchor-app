@@ -167,5 +167,9 @@ namespace anchor
                 }
             }
         }
+        private void btnAddHostCancel_Click(object sender, RoutedEventArgs e)
+        {
+            pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
+        }
     }
 }

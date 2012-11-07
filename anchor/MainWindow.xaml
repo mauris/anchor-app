@@ -193,7 +193,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
-                            <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5"></Button>
+                            <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
                         </Grid>
                     </Grid>
                 </Grid>
