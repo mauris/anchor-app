@@ -29,6 +29,8 @@ namespace anchor.Drivers
         {
             ProcessStartInfo info = new ProcessStartInfo(Path.Combine(rootPath, "bin\\apache\\apache" + apacheVersion + "\\bin\\httpd.exe"), "-n wampapache -k restart");
             info.CreateNoWindow = true;
+            info.UseShellExecute = true;
+            info.WindowStyle = ProcessWindowStyle.Hidden;
             Process.Start(info);
         }
     }
