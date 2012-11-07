@@ -53,7 +53,7 @@ namespace anchor
 
         private void restartApache()
         {
-            Process.Start(this.driver.ApacheRestartCommand);
+            driver.restartServer();
         }
 
         private void loadSettings()
@@ -120,6 +120,9 @@ namespace anchor
                 entries.Add(new Entry { Name = hostName, Path = path });
                 hostEditor.add(hostName + ".dev");
                 hostEditor.update();
+                ConfigWriter writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
+                writer.write(driver.ServerRootPath, entries.ToList());
+                this.restartApache();
                 lstSites.DataContext = entries;
 
                 txtAddHostName.Text = "";
@@ -157,6 +160,9 @@ namespace anchor
                     hostEditor.remove(entry.Name + ".dev");
                     hostEditor.update();
                     entries.Remove(entry);
+                    ConfigWriter writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
+                    writer.write(driver.ServerRootPath, entries.ToList());
+                    this.restartApache();
                     lstSites.DataContext = entries;
                 }
             }
