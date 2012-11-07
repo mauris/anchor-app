@@ -70,6 +70,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -90,6 +91,7 @@
     <Compile Include="DataFile.cs" />
     <Compile Include="Drivers\Driver.cs" />
     <Compile Include="Drivers\WampServer.cs" />
+    <Compile Include="Favicon.cs" />
     <Compile Include="HostEditor.cs" />
     <Compile Include="Settings.cs" />
     <Page Include="AppStyle.xaml">
