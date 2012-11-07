@@ -96,6 +96,7 @@ namespace anchor
             if (pnlAddHost.Visibility == System.Windows.Visibility.Collapsed)
             {
                 pnlAddHost.Visibility = System.Windows.Visibility.Visible;
+                txtAddHostName.Focus();
             }
             else
             {
