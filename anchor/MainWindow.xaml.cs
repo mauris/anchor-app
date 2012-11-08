@@ -174,5 +174,12 @@ namespace anchor
         {
             pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
         }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            btnSettings.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/settings-button-set.png")));
+            pnlContent.Visibility = System.Windows.Visibility.Collapsed;
+            pnlSettings.Visibility = System.Windows.Visibility.Visible;
+        }
     }
 }
