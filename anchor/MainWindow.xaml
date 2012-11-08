@@ -192,7 +192,15 @@
                     <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
                     <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
                 </Grid>
-            
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
+                    <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
+                </Grid>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Name="pnlContent">

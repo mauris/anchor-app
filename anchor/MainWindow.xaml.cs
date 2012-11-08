@@ -181,5 +181,15 @@ namespace anchor
             pnlContent.Visibility = System.Windows.Visibility.Collapsed;
             pnlSettings.Visibility = System.Windows.Visibility.Visible;
         }
+
+        private void btnSettingsSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSettingsCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
