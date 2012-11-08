@@ -183,7 +183,17 @@
         
         <!-- main content's here -->
         <StackPanel Grid.Row="1" Name="pnlSettings" Background="#666666" Visibility="Collapsed">
+            <StackPanel Margin="20,15,25,15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                    <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                </Grid>
             
+            </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Name="pnlContent">
             <StackPanel.Background>
