@@ -178,6 +178,9 @@
         <!-- toolbar ends -->
         
         <!-- main content's here -->
+        <StackPanel Grid.Row="1" Name="pnlSettings" Background="#666666" Visibility="Collapsed">
+            
+        </StackPanel>
         <StackPanel Grid.Row="1" Name="pnlContent">
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
