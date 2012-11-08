@@ -137,7 +137,7 @@
         </Grid.RowDefinitions>
         
         <!-- Toolbar starts -->
-        <StackPanel Grid.Row="0" Name="pnlToolbar">
+        <StackPanel Grid.Row="0" Name="pnlToolbar" Height="40">
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/toolbar-background.png" />
             </StackPanel.Background>
@@ -147,6 +147,27 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="40" />
                 </Grid.ColumnDefinitions>
+                <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Content>
+                        <Image Grid.Column="0" Width="40" Height="40">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="Assets/settings-button-normal.png"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Source" Value="Assets/settings-button-hover.png"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Button.Content>
+                </Button>
                 <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Grid.Column="2" Click="btnAddHostToggle_Click">
                     <Button.Content>
                         <Image Source="Assets/plus.png" Width="12" Height="12"></Image>
