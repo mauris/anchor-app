@@ -214,6 +214,7 @@
         
         <!-- main content's here -->
         <StackPanel Grid.Row="1" Name="pnlSettings" Background="#666666" Visibility="Collapsed">
+            <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
             <StackPanel Margin="20,15,25,15">
                 <Grid>
                     <Grid.RowDefinitions>
