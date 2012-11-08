@@ -147,7 +147,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="40" />
                 </Grid.ColumnDefinitions>
-                <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click">
+                <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click" Cursor="Hand">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="{TemplateBinding Background}"></Border>
