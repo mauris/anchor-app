@@ -130,10 +130,10 @@
         </Style>
 
     </Window.Resources>
-    <Grid>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
-            <RowDefinition />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
         <!-- Toolbar starts -->
@@ -217,11 +217,15 @@
                 </Grid>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="1" Name="pnlContent">
-            <StackPanel.Background>
+        <Grid Grid.Row="1" Name="pnlContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.Background>
                 <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
                             AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" />
-            </StackPanel.Background>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
             <!-- add host form starts -->
             <StackPanel Name="pnlAddHost" Visibility="Collapsed">
                 <StackPanel Margin="20,15,25,15">
@@ -268,10 +272,9 @@
                 </StackPanel>
             </StackPanel>
             <!-- add form ends -->
-            
-            <ListBox Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch">
-            </ListBox>
-        </StackPanel>
+            <TextBlock Grid.Row="1" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
+            <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed"></ListBox>
+        </Grid>
         <!-- end of main content -->
         
     </Grid>
