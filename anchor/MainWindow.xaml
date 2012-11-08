@@ -272,7 +272,7 @@
                 </StackPanel>
             </StackPanel>
             <!-- add form ends -->
-            <TextBlock Grid.Row="1" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
+            <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
             <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed"></ListBox>
         </Grid>
         <!-- end of main content -->

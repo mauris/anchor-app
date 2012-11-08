@@ -83,6 +83,12 @@ namespace anchor
                     entries = new ObservableCollection<Entry>();
                 }
                 lstSites.DataContext = entries;
+                if (entries.Count > 0)
+                {
+
+                    lblNoSites.Visibility = System.Windows.Visibility.Collapsed;
+                    lstSites.Visibility = System.Windows.Visibility.Visible;
+                }
             }
             catch (IOException)
             {
@@ -127,6 +133,9 @@ namespace anchor
                 this.restartApache();
                 lstSites.DataContext = entries;
 
+                lblNoSites.Visibility = System.Windows.Visibility.Collapsed;
+                lstSites.Visibility = System.Windows.Visibility.Visible;
+
                 txtAddHostName.Text = "";
                 txtAddHostPath.Text = "";
                 pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
@@ -166,6 +175,12 @@ namespace anchor
                     writer.write(driver.ServerRootPath, entries.ToList());
                     this.restartApache();
                     lstSites.DataContext = entries;
+                    if (entries.Count == 0)
+                    {
+
+                        lblNoSites.Visibility = System.Windows.Visibility.Visible;
+                        lstSites.Visibility = System.Windows.Visibility.Collapsed;
+                    }
                 }
             }
         }
