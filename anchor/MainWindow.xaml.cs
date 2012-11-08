@@ -180,18 +180,25 @@ namespace anchor
             btnSettings.Content = "set";
             pnlContent.Visibility = System.Windows.Visibility.Collapsed;
             pnlSettings.Visibility = System.Windows.Visibility.Visible;
+            txtWampServerPath.Text = settings.WampServerPath;
         }
 
-        private void btnSettingsSave_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnSettingsCancel_Click(object sender, RoutedEventArgs e)
+        private void closeSettingsPanel()
         {
             btnSettings.Content = "";
             pnlContent.Visibility = System.Windows.Visibility.Visible;
             pnlSettings.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void btnSettingsSave_Click(object sender, RoutedEventArgs e)
+        {
+            settings.WampServerPath = txtWampServerPath.Text;
+            closeSettingsPanel();
+        }
+
+        private void btnSettingsCancel_Click(object sender, RoutedEventArgs e)
+        {
+            closeSettingsPanel();
         }
     }
 }
