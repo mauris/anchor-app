@@ -48,7 +48,7 @@ namespace anchor
             loadEntries();
             loadSettings();
             settings.WampServerPath = @"C:\wamp";
-            driver = new WampServer(settings.WampServerPath);            
+            driver = new WampServer(settings.WampServerPath);
         }
 
         private void restartApache()
