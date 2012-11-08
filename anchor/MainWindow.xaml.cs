@@ -101,6 +101,7 @@ namespace anchor
             lstSites.SelectedIndex = -1;
             if (pnlAddHost.Visibility == System.Windows.Visibility.Collapsed)
             {
+                closeSettingsPanel();
                 pnlAddHost.Visibility = System.Windows.Visibility.Visible;
                 txtAddHostName.Focus();
             }
@@ -196,6 +197,7 @@ namespace anchor
             pnlContent.Visibility = System.Windows.Visibility.Collapsed;
             pnlSettings.Visibility = System.Windows.Visibility.Visible;
             txtWampServerPath.Text = settings.WampServerPath;
+            pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
         }
 
         private void closeSettingsPanel()
