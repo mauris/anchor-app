@@ -192,12 +192,9 @@
             </StackPanel.Background>
             <!-- add host form starts -->
             <StackPanel Name="pnlAddHost" Visibility="Collapsed">
-                <Grid>
-                    <Grid Margin="20,15,25,15">
+                <StackPanel Margin="20,15,25,15">
+                    <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
@@ -218,19 +215,25 @@
                                 </ControlTemplate>
                             </TextBox.Template>
                         </TextBox>
-                        <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="2" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                        <TextBox Grid.Row="3" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                        <Grid Grid.Row="4">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
-                            <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
-                        </Grid>
                     </Grid>
-                </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                        <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
+                        <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
             <!-- add form ends -->
             
