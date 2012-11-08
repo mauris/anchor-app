@@ -135,6 +135,8 @@
             <RowDefinition Height="40" />
             <RowDefinition />
         </Grid.RowDefinitions>
+        
+        <!-- Toolbar starts -->
         <StackPanel Grid.Row="0" Name="pnlToolbar">
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/toolbar-background.png" />
@@ -152,11 +154,15 @@
                 </Button>
             </Grid>
         </StackPanel>
+        <!-- toolbar ends -->
+        
+        <!-- main content's here -->
         <StackPanel Grid.Row="1" Name="pnlContent">
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
                             AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" />
             </StackPanel.Background>
+            <!-- add host form starts -->
             <StackPanel Name="pnlAddHost" Visibility="Collapsed">
                 <Grid>
                     <Grid Margin="20,15,25,15">
@@ -198,8 +204,12 @@
                     </Grid>
                 </Grid>
             </StackPanel>
+            <!-- add form ends -->
+            
             <ListBox Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch">
             </ListBox>
         </StackPanel>
+        <!-- end of main content -->
+        
     </Grid>
 </Window>
