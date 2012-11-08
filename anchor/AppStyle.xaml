@@ -360,12 +360,10 @@
         <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultTextBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="MinWidth" Value="28" />
-        <Setter Property="MinHeight" Value="28" />
         <Setter Property="FontFamily" Value="{DynamicResource MessageFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
-        <Setter Property="Padding" Value="1" />
+        <Setter Property="Padding" Value="10,5" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource ButtonBaseFocusVisualStyle}"/>
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">

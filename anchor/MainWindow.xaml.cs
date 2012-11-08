@@ -47,7 +47,6 @@ namespace anchor
         {
             loadEntries();
             loadSettings();
-            settings.WampServerPath = @"C:\wamp";
             driver = new WampServer(settings.WampServerPath);
         }
 
@@ -65,11 +64,12 @@ namespace anchor
                 if (settings == null)
                 {
                     settings = new Settings();
+                    settings.WampServerPath = @"C:\wamp";
                 }
             }
             catch (IOException)
             {
-
+                settings.WampServerPath = @"C:\wamp";
             }
         }
 
@@ -216,6 +216,28 @@ namespace anchor
         private void btnSettingsCancel_Click(object sender, RoutedEventArgs e)
         {
             closeSettingsPanel();
+        }
+
+        private void btnBrowsePath_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox path = (TextBox)(((FrameworkElement)sender).Parent as FrameworkElement).FindName((string)((FrameworkElement)sender).Tag);
+
+            // Configure open file dialog box
+            System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
+            dlg.Description = "Select a folder";
+            dlg.SelectedPath = path.Text;
+
+            // Show open file dialog box
+            System.Windows.Forms.DialogResult result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                // Open document
+                path.Text = dlg.SelectedPath;
+                path.SelectAll();
+                path.Focus();
+            }
         }
     }
 }

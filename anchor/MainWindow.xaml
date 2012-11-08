@@ -203,7 +203,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Grid.Column="2" Click="btnAddHostToggle_Click">
+                <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Padding="0" Grid.Column="2" Click="btnAddHostToggle_Click">
                     <Button.Content>
                         <Image Source="Assets/plus.png" Width="12" Height="12" RenderOptions.EdgeMode="Aliased"></Image>
                     </Button.Content>
@@ -217,14 +217,21 @@
             <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
             <StackPanel Margin="20,15,25,15">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
                     <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                    <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
+                        <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                    </Button>
                 </Grid>
-                <Grid>
+                <Grid Margin="0,20,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*"/>
@@ -254,7 +261,7 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                            <TextBox Grid.Row="1" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
+                            <TextBox Grid.Row="1" MaxLength="20" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
                                 <TextBox.Template>
                                     <ControlTemplate>
                                         <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
@@ -272,12 +279,19 @@
                             </TextBox>
                         </Grid>
                         <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                            <TextBlock Text="PATH" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource Text1Brush}" FontFamily="Segoe UI" FontSize="11"></TextBlock>
                             <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                            <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtAddHostPath" Click="btnBrowsePath_Click">
+                                <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                            </Button>
                         </Grid>
                         <Grid>
                             <Grid.ColumnDefinitions>
