@@ -177,7 +177,7 @@ namespace anchor
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            btnSettings.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "Assets/settings-button-set.png")));
+            btnSettings.Content = "set";
             pnlContent.Visibility = System.Windows.Visibility.Collapsed;
             pnlSettings.Visibility = System.Windows.Visibility.Visible;
         }
@@ -189,7 +189,9 @@ namespace anchor
 
         private void btnSettingsCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            btnSettings.Content = "";
+            pnlContent.Visibility = System.Windows.Visibility.Visible;
+            pnlSettings.Visibility = System.Windows.Visibility.Collapsed;
         }
     }
 }

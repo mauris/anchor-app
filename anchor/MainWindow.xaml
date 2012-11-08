@@ -147,7 +147,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="40" />
                 </Grid.ColumnDefinitions>
-                <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click" Cursor="Hand">
+                <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="{TemplateBinding Background}"></Border>
@@ -155,19 +155,33 @@
                     </Button.Template>
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter Property="Content" Value="" />
                             <Setter Property="Background">
                                 <Setter.Value>
                                     <ImageBrush ImageSource="Assets/settings-button-normal.png"></ImageBrush>
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="true">
+                                <Trigger Property="Content" Value="set">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="Assets/settings-button-set.png"></ImageBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Cursor" Value="Arrow" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsMouseOver" Value="true" />
+                                        <Condition Property="Content" Value="" />
+                                    </MultiTrigger.Conditions>
                                     <Setter Property="Background">
                                         <Setter.Value>
                                             <ImageBrush ImageSource="Assets/settings-button-hover.png"></ImageBrush>
                                         </Setter.Value>
                                     </Setter>
-                                </Trigger>
+                                </MultiTrigger>
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
