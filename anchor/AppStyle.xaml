@@ -543,25 +543,11 @@
 
     <!--ListBox Item-->
     <Style x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}">
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontFamily" Value="{DynamicResource MessageFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
-        <Setter Property="Padding" Value="4,2,4,2" />
-        <Setter Property="MinHeight" Value="20" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource ListItemFocusVisualStyle}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Border Name="ListBoxItemRoot" CornerRadius="2" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
-                        <ContentPresenter Name="ListBoxItemContent" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -583,22 +569,13 @@
 
     <!--ListBox Style-->
     <Style x:Key="{x:Type ListBox}" TargetType="{x:Type ListBox}">
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource Text1Brush}" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ListBox}">
-                    <Border CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                        <ScrollViewer CanContentScroll="true" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" Padding="{TemplateBinding Padding}">
-                            <ItemsPresenter />
-                        </ScrollViewer>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     </Style>
 
     <!--ScrollBars-->

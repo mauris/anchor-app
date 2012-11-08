@@ -5,106 +5,120 @@
     <Window.Resources>
 
         <DataTemplate x:Key="ItemTemplate">
-            <Grid Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
-                <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
-                <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
-            </Grid>
+            <StackPanel Orientation="Vertical" Margin="0">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
+                    <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
+                    <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                </Grid>
+                <StackPanel HorizontalAlignment="Stretch" Height="3">
+                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                    <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
+                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                </StackPanel>
+            </StackPanel>
         </DataTemplate>
 
         <DataTemplate x:Key="SelectedTemplate">
-            <Grid Margin="10" HorizontalAlignment="Stretch">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
-                <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
-                <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
-                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0, 5, 0, 0">
+            <StackPanel Orientation="Vertical">
+                <Grid Margin="10" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
                         <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostOpen" Click="btnHostOpen_Click">
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                        <Button.ContentTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="Assets/world.png" Width="16" Height="16" />
-                                    <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
-                                        Open
-                                    </TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </Button.ContentTemplate>
-                    </Button>
-                    <Button Grid.Column="1" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostBrowse" Click="btnHostBrowse_Click">
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                        <Button.ContentTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="Assets/folder.png" Width="16" Height="16" />
-                                    <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
-                                        Browse
-                                    </TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </Button.ContentTemplate>
-                    </Button>
-                    <Button Grid.Column="2" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostDelete" Click="btnHostDelete_Click">
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                        <Button.ContentTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="Assets/bin.png" Width="16" Height="16" />
-                                    <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
-                                        Delete
-                                    </TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </Button.ContentTemplate>
-                    </Button>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
+                    <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
+                    <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                    <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0, 5, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostOpen" Click="btnHostOpen_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="Assets/world.png" Width="16" Height="16" />
+                                        <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
+                                            Open
+                                        </TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+                        <Button Grid.Column="1" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostBrowse" Click="btnHostBrowse_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="Assets/folder.png" Width="16" Height="16" />
+                                        <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
+                                            Browse
+                                        </TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+                        <Button Grid.Column="2" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostDelete" Click="btnHostDelete_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="Assets/bin.png" Width="16" Height="16" />
+                                        <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
+                                            Delete
+                                        </TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+                    </Grid>
                 </Grid>
-            </Grid>
+            <StackPanel HorizontalAlignment="Stretch" Height="3">
+                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
+                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+            </StackPanel>
+            </StackPanel>
         </DataTemplate>
 
         <Style TargetType="{x:Type ListBoxItem}" x:Key="ContainerStyle">
@@ -112,6 +126,9 @@
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
                              Color="#484848"/>
             </Style.Resources>
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
             <Setter Property="ContentTemplate" Value="{StaticResource ItemTemplate}" />
             <Style.Triggers>
                 <MultiTrigger>
@@ -159,14 +176,14 @@
                             <Setter Property="Content" Value="" />
                             <Setter Property="Background">
                                 <Setter.Value>
-                                    <ImageBrush ImageSource="Assets/settings-button-normal.png"></ImageBrush>
+                                    <ImageBrush ImageSource="Assets/settings-button-normal.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
                                 <Trigger Property="Content" Value="set">
                                     <Setter Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="Assets/settings-button-set.png"></ImageBrush>
+                                            <ImageBrush ImageSource="Assets/settings-button-set.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
                                         </Setter.Value>
                                     </Setter>
                                     <Setter Property="Cursor" Value="Arrow" />
@@ -178,7 +195,7 @@
                                     </MultiTrigger.Conditions>
                                     <Setter Property="Background">
                                         <Setter.Value>
-                                            <ImageBrush ImageSource="Assets/settings-button-hover.png"></ImageBrush>
+                                            <ImageBrush ImageSource="Assets/settings-button-hover.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
                                         </Setter.Value>
                                     </Setter>
                                 </MultiTrigger>
@@ -188,7 +205,7 @@
                 </Button>
                 <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Grid.Column="2" Click="btnAddHostToggle_Click">
                     <Button.Content>
-                        <Image Source="Assets/plus.png" Width="12" Height="12"></Image>
+                        <Image Source="Assets/plus.png" Width="12" Height="12" RenderOptions.EdgeMode="Aliased"></Image>
                     </Button.Content>
                 </Button>
             </Grid>
@@ -217,64 +234,77 @@
                 </Grid>
             </StackPanel>
         </StackPanel>
-        <Grid Grid.Row="1" Name="pnlContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Grid.Background>
+        <StackPanel Grid.Row="1" Name="pnlContent">
+            <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
-                            AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" />
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <!-- add host form starts -->
-            <StackPanel Name="pnlAddHost" Visibility="Collapsed">
-                <StackPanel Margin="20,15,25,15">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                        <TextBox Grid.Row="1" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
-                            <TextBox.Template>
-                                <ControlTemplate>
-                                    <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
-                                            <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 6,0,0" Foreground="Gray" Cursor="IBeam" />
-                                        </Grid>
-                                    </Border>
-                                </ControlTemplate>
-                            </TextBox.Template>
-                        </TextBox>
-                    </Grid>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                        <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                    </Grid>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
-                        <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
-                    </Grid>
+                            AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
+            </StackPanel.Background>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <!-- add host form starts -->
+                <StackPanel Name="pnlAddHost" Visibility="Collapsed">
+                    <StackPanel Margin="20,15,25,15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                            <TextBox Grid.Row="1" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
+                                <TextBox.Template>
+                                    <ControlTemplate>
+                                        <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                                                <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 6,0,0" Foreground="Gray" Cursor="IBeam" />
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </TextBox.Template>
+                            </TextBox>
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="PATH" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                            <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
+                            <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Stretch" Height="3">
+                        <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                        <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
+                        <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
-            <!-- add form ends -->
-            <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
-            <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed"></ListBox>
-        </Grid>
+                <!-- add form ends -->
+                <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
+                <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" Background="Red" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed" Padding="0" Margin="0">
+                    <ListBox.Template>
+                        <ControlTemplate TargetType="{x:Type ListBox}">
+                            <ItemsPresenter />
+                        </ControlTemplate>
+                    </ListBox.Template>
+                </ListBox>
+            </Grid>
+        </StackPanel>
         <!-- end of main content -->
         
     </Grid>
