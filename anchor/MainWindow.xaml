@@ -254,35 +254,50 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <StackPanel Name="pnlSettings" Background="#666666" Visibility="Collapsed" Margin="-2">
-                    <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
-                    <StackPanel Margin="20,15,25,15">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                            <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                            <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
-                                <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
-                            </Button>
-                        </Grid>
-                        <Grid Margin="0,20,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
-                            <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
-                        </Grid>
-                    </StackPanel>
-                </StackPanel>
+                <Grid Name="pnlSettings" Background="#666666" Visibility="Collapsed">
+                    <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
+                            <StackPanel Margin="20,15,25,15">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                                    <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                                    <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
+                                        <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                                    </Button>
+                                </Grid>
+                                <Grid Margin="0,20,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
+                                    <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="1" Name="lblAbout" Foreground="#BABABA" Margin="20" FontSize="11">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Color="Black" Direction="135" ShadowDepth="1" BlurRadius="1" Opacity=".2" />
+                                </TextBlock.Effect>
+                                %version%
+                        </TextBlock>
+                    </Grid>
+                </Grid>
                 <StackPanel Name="pnlContent">
                     <StackPanel.Background>
                         <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"

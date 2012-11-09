@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using anchor.Drivers;
+using System.Reflection;
 
 namespace anchor
 {
@@ -45,6 +46,10 @@ namespace anchor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string version = fvi.ProductVersion;
+            lblAbout.Text = "Anchor for Windows v" + version[0] + "." + version[2] + "." + version[4] + "\nSam-Mauris Yong";
             loadEntries();
             loadSettings();
             driver = new WampServer(settings.WampServerPath);
