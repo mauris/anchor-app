@@ -27,19 +27,26 @@ namespace anchor
             get
             {
                 var bitmap = Favicon.fetch(this.Path, this.Name + ".dev");
-                IntPtr bmpPt = bitmap.GetHbitmap();
-                BitmapSource bitmapSource =
-                 System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                       bmpPt,
-                       IntPtr.Zero,
-                       Int32Rect.Empty,
-                       BitmapSizeOptions.FromEmptyOptions());
+                if (bitmap != null)
+                {
+                    IntPtr bmpPt = bitmap.GetHbitmap();
+                    BitmapSource bitmapSource =
+                     System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                           bmpPt,
+                           IntPtr.Zero,
+                           Int32Rect.Empty,
+                           BitmapSizeOptions.FromEmptyOptions());
 
-                //freeze bitmapSource and clear memory to avoid memory leaks
-                bitmapSource.Freeze();
-                DeleteObject(bmpPt);
+                    //freeze bitmapSource and clear memory to avoid memory leaks
+                    bitmapSource.Freeze();
+                    DeleteObject(bmpPt);
 
-                return bitmapSource;
+                    return bitmapSource;
+                }
+                else
+                {
+                    return new BitmapImage(new Uri(@"pack://application:,,,/anchor;component/Assets/application.png"));
+                }
             }
         }
 
