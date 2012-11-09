@@ -257,110 +257,110 @@
                 <StackPanel Name="pnlSettings" Background="#666666" Visibility="Collapsed" Margin="-2">
                     <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
                     <StackPanel Margin="20,15,25,15">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                            <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                            <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
+                                <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                            </Button>
+                        </Grid>
+                        <Grid Margin="0,20,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
+                            <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="pnlContent">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
+                                    AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
+                    </StackPanel.Background>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                        <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                        <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
-                            <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
-                        </Button>
-                    </Grid>
-                    <Grid Margin="0,20,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
-                        <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
+                        <!-- add host form starts -->
+                        <StackPanel Name="pnlAddHost" Visibility="Collapsed">
+                            <StackPanel Margin="20,15,25,15">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                                    <TextBox Grid.Row="1" MaxLength="20" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
+                                        <TextBox.Template>
+                                            <ControlTemplate>
+                                                <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                                                        <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 6,0,0" Foreground="Gray" Cursor="IBeam" />
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </TextBox.Template>
+                                    </TextBox>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="PATH" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource Text1Brush}" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                                    <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                                    <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtAddHostPath" Click="btnBrowsePath_Click">
+                                        <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                                    </Button>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
+                                    <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Stretch" Height="3">
+                                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                                <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
+                                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- add form ends -->
+                        <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
+                        <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed" Padding="0" Margin="0">
+                            <ListBox.Template>
+                                <ControlTemplate TargetType="{x:Type ListBox}">
+                                    <ItemsPresenter />
+                                </ControlTemplate>
+                            </ListBox.Template>
+                        </ListBox>
                     </Grid>
                 </StackPanel>
-            </StackPanel>
-            <StackPanel Name="pnlContent">
-                <StackPanel.Background>
-                    <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
-                                AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
-                </StackPanel.Background>
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <!-- add host form starts -->
-                    <StackPanel Name="pnlAddHost" Visibility="Collapsed">
-                        <StackPanel Margin="20,15,25,15">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                <TextBox Grid.Row="1" MaxLength="20" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
-                                    <TextBox.Template>
-                                        <ControlTemplate>
-                                            <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="*" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
-                                                    <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 6,0,0" Foreground="Gray" Cursor="IBeam" />
-                                                </Grid>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </TextBox.Template>
-                                </TextBox>
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <TextBlock Text="PATH" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource Text1Brush}" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                                <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtAddHostPath" Click="btnBrowsePath_Click">
-                                    <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
-                                </Button>
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
-                                <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
-                            </Grid>
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Stretch" Height="3">
-                            <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                            <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
-                            <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                        </StackPanel>
-                    </StackPanel>
-                    <!-- add form ends -->
-                    <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
-                    <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed" Padding="0" Margin="0">
-                        <ListBox.Template>
-                            <ControlTemplate TargetType="{x:Type ListBox}">
-                                <ItemsPresenter />
-                            </ControlTemplate>
-                        </ListBox.Template>
-                    </ListBox>
-                </Grid>
-            </StackPanel>
 
             </Grid>
         </ScrollViewer>
