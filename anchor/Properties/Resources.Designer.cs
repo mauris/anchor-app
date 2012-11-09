@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace anchor.Properties
-{
-
-
+namespace anchor.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,95 @@ namespace anchor.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    public class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        public static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("anchor.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        public static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BSD 3-Clause License
+        ///
+        ///Copyright (c) 2012, Sam-Mauris Yong (Singapore)
+        ///All rights reserved.
+        ///
+        ///Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+        ///
+        ///1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        ///2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the doc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string license_Anchor {
+            get {
+                return ResourceManager.GetString("license_Anchor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creative Commons Attribution 2.5 License
+        ///
+        ///Silk icons is a work created by Mark James (Birmingham, UK) and is licensed under the Creative Commons Attribution 2.5 License. The download page of the icon set can be found at http://www.famfamfam.com/lab/icons/silk/. Visit http://creativecommons.org/licenses/by/2.5/ for full licensing details on the CC BY 2.5 license..
+        /// </summary>
+        public static string license_F3Silk {
+            get {
+                return ResourceManager.GetString("license_F3Silk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MIT License
+        ///
+        ///Copyright (c) 2008 Ricardo Amores Hernández 
+        ///
+        ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        ///
+        ///The above cop [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string license_INIParser {
+            get {
+                return ResourceManager.GetString("license_INIParser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+        ///
+        ///All remaining media in Anchor are created by Sam-Mauris Yong (Singapore) and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. Visit http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_SG for the full licensing details on the CC BY-NC-ND 3.0 license..
+        /// </summary>
+        public static string license_Media {
+            get {
+                return ResourceManager.GetString("license_Media", resourceCulture);
             }
         }
     }

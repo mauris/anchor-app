@@ -50,6 +50,12 @@ namespace anchor
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.ProductVersion;
             lblAbout.Text = "Anchor for Windows v" + version[0] + "." + version[2] + "." + version[4];
+
+            lblLicenseAnchor.Text = anchor.Properties.Resources.license_Anchor;
+            lblLicenseINIParser.Text = anchor.Properties.Resources.license_INIParser;
+            lblLicenseF3Silk.Text = anchor.Properties.Resources.license_F3Silk;
+            lblLicenseMedia.Text = anchor.Properties.Resources.license_Media;
+
             loadEntries();
             loadSettings();
             driver = new WampServer(settings.WampServerPath);
@@ -248,6 +254,19 @@ namespace anchor
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
+        }
+
+        private void btnLicenseClose_Click(object sender, RoutedEventArgs e)
+        {
+            pnlLicense.Visibility = System.Windows.Visibility.Collapsed;
+            pnlMainContent.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void License_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            pnlLicense.Visibility = System.Windows.Visibility.Visible;
+            pnlMainContent.Visibility = System.Windows.Visibility.Collapsed;
             e.Handled = true;
         }
     }

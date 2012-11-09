@@ -157,244 +157,248 @@
         </Style>
 
     </Window.Resources>
-    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <Grid Name="pnlUniverse">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <!-- Toolbar starts -->
-        <StackPanel Grid.Row="0" Name="pnlToolbar" Height="40">
-            <StackPanel.Background>
-                <ImageBrush ImageSource="Assets/toolbar-background.png" />
-            </StackPanel.Background>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40" />
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="40" />
-                </Grid.ColumnDefinitions>
-                <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Background="{TemplateBinding Background}"></Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Cursor" Value="Hand" />
-                            <Setter Property="Content" Value="" />
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <ImageBrush ImageSource="Assets/settings-button-normal.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="Content" Value="set">
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="Assets/settings-button-set.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="Cursor" Value="Arrow" />
-                                </Trigger>
-                                <MultiTrigger>
-                                    <MultiTrigger.Conditions>
-                                        <Condition Property="IsMouseOver" Value="true" />
-                                        <Condition Property="Content" Value="" />
-                                    </MultiTrigger.Conditions>
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="Assets/settings-button-hover.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
-                                        </Setter.Value>
-                                    </Setter>
-                                </MultiTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-                <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Padding="0" Grid.Column="2" Click="btnAddHostToggle_Click">
-                    <Button.Content>
-                        <Image Source="Assets/plus.png" Width="12" Height="12" RenderOptions.EdgeMode="Aliased"></Image>
-                    </Button.Content>
-                </Button>
-            </Grid>
-        </StackPanel>
-        <!-- toolbar ends -->
-        
-        <!-- main content's here -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <ScrollViewer.Style>
-                <Style TargetType="{x:Type ScrollViewer}">
-                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type ScrollViewer}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
+        <Grid Name="pnlLicense" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="20">
+                    <StackPanel>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">Anchor App</TextBlock>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">Main Application</TextBlock>
+                        <TextBlock Name="lblLicenseAnchor" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
 
-                                    <ScrollContentPresenter/>
+                    <StackPanel>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">famfamfam Silk Icons</TextBlock>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">Tiny little icons that are found in the application.</TextBlock>
+                        <TextBlock Name="lblLicenseF3Silk" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
 
-                                    <ScrollBar HorizontalAlignment="Right" Name="PART_VerticalScrollBar" Background="Transparent"
-            Value="{TemplateBinding VerticalOffset}"
-            Maximum="{TemplateBinding ScrollableHeight}"
-            ViewportSize="{TemplateBinding ViewportHeight}"
-            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
-                                    <ScrollBar Name="PART_HorizontalScrollBar"
-            Orientation="Horizontal"  Background="Transparent"
-                                               VerticalAlignment="Bottom"
-            Value="{TemplateBinding HorizontalOffset}"
-            Maximum="{TemplateBinding ScrollableWidth}"
-            ViewportSize="{TemplateBinding ViewportWidth}"
-            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
-
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-
-            </ScrollViewer.Style>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid Name="pnlSettings" Background="#666666" Visibility="Collapsed">
-                    <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <StackPanel>
-                            <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
-                            <StackPanel Margin="20,15,25,15">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                    <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                                    <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
-                                        <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
-                                    </Button>
-                                </Grid>
-                                <Grid Margin="0,20,0,0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
-                                    <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
-                                </Grid>
-                            </StackPanel>
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="1" Margin="20">
-                            <TextBlock Name="lblAbout" Style="{StaticResource SettingsAboutTextLabel}">
-                                    %version%
-                            </TextBlock>
-                            <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
-                                <Hyperlink Foreground="#94DCF2" NavigateUri="http://mauris.sg/" RequestNavigate="Hyperlink_RequestNavigate">Sam-Mauris Yong</Hyperlink>
-                            </TextBlock>
-                            <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
-                                Source on <Hyperlink Foreground="#94DCF2" NavigateUri="https://github.com/thephpdeveloper/anchor-app" RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink>
-                            </TextBlock>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
-                <StackPanel Name="pnlContent">
-                    <StackPanel.Background>
-                        <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
-                                    AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
-                    </StackPanel.Background>
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <!-- add host form starts -->
-                        <StackPanel Name="pnlAddHost" Visibility="Collapsed">
-                            <StackPanel Margin="20,15,25,15">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                    <TextBox Grid.Row="1" MaxLength="20" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
-                                        <TextBox.Template>
-                                            <ControlTemplate>
-                                                <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
-                                                    <Grid>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="Auto" />
-                                                            <ColumnDefinition Width="*" />
-                                                        </Grid.ColumnDefinitions>
-                                                        <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
-                                                        <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 6,0,0" Foreground="Gray" Cursor="IBeam" />
-                                                    </Grid>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </TextBox.Template>
-                                    </TextBox>
-                                </Grid>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Text="PATH" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource Text1Brush}" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                    <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
-                                    <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtAddHostPath" Click="btnBrowsePath_Click">
-                                        <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
-                                    </Button>
-                                </Grid>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
-                                    <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
-                                </Grid>
-                            </StackPanel>
-                            <StackPanel HorizontalAlignment="Stretch" Height="3">
-                                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                                <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
-                                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                            </StackPanel>
-                        </StackPanel>
-                        <!-- add form ends -->
-                        <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
-                        <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed" Padding="0" Margin="0">
-                            <ListBox.Template>
-                                <ControlTemplate TargetType="{x:Type ListBox}">
-                                    <ItemsPresenter />
-                                </ControlTemplate>
-                            </ListBox.Template>
-                        </ListBox>
-                    </Grid>
+                    <StackPanel>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">Images and Media</TextBlock>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">All other media found in the application.</TextBlock>
+                        <TextBlock Name="lblLicenseMedia" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
+                    
+                    <StackPanel>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">INIParser.dll</TextBlock>
+                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">Used to load INI files in WampServer configuration</TextBlock>
+                        <TextBlock Name="lblLicenseINIParser" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
                 </StackPanel>
-
-            </Grid>
-        </ScrollViewer>
-        <!-- end of main content -->
+            </ScrollViewer>
+            <Button Grid.Row="1" Name="btnLicenseClose" Margin="5" Click="btnLicenseClose_Click">Close</Button>
+        </Grid>
+        <Grid Name="pnlMainContent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         
+            <!-- Toolbar starts -->
+            <StackPanel Grid.Row="0" Name="pnlToolbar" Height="40">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Assets/toolbar-background.png" />
+                </StackPanel.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"></Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="Content" Value="" />
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Assets/settings-button-normal.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="Content" Value="set">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="Assets/settings-button-set.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Cursor" Value="Arrow" />
+                                    </Trigger>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsMouseOver" Value="true" />
+                                            <Condition Property="Content" Value="" />
+                                        </MultiTrigger.Conditions>
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <ImageBrush ImageSource="Assets/settings-button-hover.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </MultiTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Padding="0" Grid.Column="2" Click="btnAddHostToggle_Click">
+                        <Button.Content>
+                            <Image Source="Assets/plus.png" Width="12" Height="12" RenderOptions.EdgeMode="Aliased"></Image>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <!-- toolbar ends -->
+        
+            <!-- main content's here -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Name="pnlSettings" Background="#666666" Visibility="Collapsed">
+                        <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel>
+                                <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
+                                <StackPanel Margin="20,15,25,15">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                                        <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                                        <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
+                                            <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                                        </Button>
+                                    </Grid>
+                                    <Grid Margin="0,20,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
+                                        <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
+                                    </Grid>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Margin="20">
+                                <TextBlock Name="lblAbout" Style="{StaticResource SettingsAboutTextLabel}">
+                                        %version%
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
+                                    By <Hyperlink Foreground="#94DCF2" NavigateUri="http://mauris.sg/" RequestNavigate="Hyperlink_RequestNavigate">Sam-Mauris Yong</Hyperlink>.
+                                    <Hyperlink Foreground="#94DCF2" NavigateUri="#" RequestNavigate="License_RequestNavigate">License and Agreement</Hyperlink>.
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
+                                    Source on <Hyperlink Foreground="#94DCF2" NavigateUri="https://github.com/thephpdeveloper/anchor-app" RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink> 
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <StackPanel Name="pnlContent">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
+                                        AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
+                        </StackPanel.Background>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <!-- add host form starts -->
+                            <StackPanel Name="pnlAddHost" Visibility="Collapsed">
+                                <StackPanel Margin="20,15,25,15">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                                        <TextBox Grid.Row="1" MaxLength="20" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2">
+                                            <TextBox.Template>
+                                                <ControlTemplate>
+                                                    <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <ScrollViewer Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                                                            <TextBlock Grid.Column="1" Text=".dev" Margin="-2, 2,0,0" Foreground="Gray" Cursor="IBeam" />
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </TextBox.Template>
+                                        </TextBox>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="PATH" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource Text1Brush}" FontFamily="Segoe UI" FontSize="11"></TextBlock>
+                                        <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14" Padding="2"></TextBox>
+                                        <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="33" VerticalAlignment="Top" Margin="2" Tag="txtAddHostPath" Click="btnBrowsePath_Click">
+                                            <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                                        </Button>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
+                                        <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
+                                    </Grid>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Stretch" Height="3">
+                                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                                    <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
+                                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                                </StackPanel>
+                            </StackPanel>
+                            <!-- add form ends -->
+                            <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
+                            <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed" Padding="0" Margin="0">
+                                <ListBox.Template>
+                                    <ControlTemplate TargetType="{x:Type ListBox}">
+                                        <ItemsPresenter />
+                                    </ControlTemplate>
+                                </ListBox.Template>
+                            </ListBox>
+                        </Grid>
+                    </StackPanel>
+
+                </Grid>
+            </ScrollViewer>
+            <!-- end of main content -->
+        
+        </Grid>
     </Grid>
 </Window>
