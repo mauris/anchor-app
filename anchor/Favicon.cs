@@ -16,10 +16,7 @@ namespace anchor
             if (File.Exists(file))
             {
                 Icon ico = Icon.ExtractAssociatedIcon(file);
-
-                MemoryStream strm = new MemoryStream();
-                ico.Save(strm);
-                return new Bitmap(strm);
+                return ico.ToBitmap();
             }
             return null;
         }
