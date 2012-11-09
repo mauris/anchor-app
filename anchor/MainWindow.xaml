@@ -13,8 +13,8 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
-                    <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
-                    <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                    <TextBlock Text="{Binding Name}" Grid.Column="1" FontSize="12"></TextBlock>
+                    <TextBlock Text=".dev" Grid.Column="2" Margin="3,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
                 </Grid>
                 <StackPanel HorizontalAlignment="Stretch" Height="3">
                     <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
@@ -36,10 +36,10 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
-                    <TextBlock Text="{Binding Name}" Grid.Column="1"></TextBlock>
-                    <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
-                    <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0, 5, 0, 0">
+                    <Image Source="{Binding GetFavicon}" Width="16" Height="16" />
+                    <TextBlock Text="{Binding Name}" Grid.Column="1" FontSize="14"></TextBlock>
+                    <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" FontSize="14" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                    <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0, 10, 0, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
