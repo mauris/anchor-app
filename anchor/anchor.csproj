@@ -64,6 +64,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>anchor-icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="INIFileParser">
       <HintPath>.\INIFileParser.dll</HintPath>
@@ -188,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\settings-button-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="anchor-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
