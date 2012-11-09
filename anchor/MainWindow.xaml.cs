@@ -49,7 +49,7 @@ namespace anchor
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.ProductVersion;
-            lblAbout.Text = "Anchor for Windows v" + version[0] + "." + version[2] + "." + version[4] + "\nSam-Mauris Yong";
+            lblAbout.Text = "Anchor for Windows v" + version[0] + "." + version[2] + "." + version[4];
             loadEntries();
             loadSettings();
             driver = new WampServer(settings.WampServerPath);
@@ -243,6 +243,12 @@ namespace anchor
                 path.SelectAll();
                 path.Focus();
             }
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

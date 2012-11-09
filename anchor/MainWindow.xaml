@@ -120,6 +120,16 @@
             </StackPanel>
             </StackPanel>
         </DataTemplate>
+        
+        <Style TargetType="{x:Type TextBlock}" x:Key="SettingsAboutTextLabel">
+            <Setter Property="TextBlock.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="135" ShadowDepth="1" BlurRadius="1" Opacity=".2" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="#BABABA" />
+            <Setter Property="FontSize" Value="11" />
+        </Style>
 
         <Style TargetType="{x:Type ListBoxItem}" x:Key="ContainerStyle">
             <Style.Resources>
@@ -290,12 +300,17 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <TextBlock Grid.Row="1" Name="lblAbout" Foreground="#BABABA" Margin="20" FontSize="11">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Color="Black" Direction="135" ShadowDepth="1" BlurRadius="1" Opacity=".2" />
-                                </TextBlock.Effect>
-                                %version%
-                        </TextBlock>
+                        <StackPanel Grid.Row="1" Margin="20">
+                            <TextBlock Name="lblAbout" Style="{StaticResource SettingsAboutTextLabel}">
+                                    %version%
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
+                                <Hyperlink Foreground="#94DCF2" NavigateUri="http://mauris.sg/" RequestNavigate="Hyperlink_RequestNavigate">Sam-Mauris Yong</Hyperlink>
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
+                                Source on <Hyperlink Foreground="#94DCF2" NavigateUri="https://github.com/thephpdeveloper/anchor-app" RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
                     </Grid>
                 </Grid>
                 <StackPanel Name="pnlContent">
