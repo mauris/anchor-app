@@ -4,11 +4,11 @@
     xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
     xmlns:Sys="clr-namespace:System;assembly=mscorlib"
     >
-    <FontFamily x:Key="IconFontFamily">Tahoma</FontFamily>
+    <FontFamily x:Key="IconFontFamily">Segoe UI</FontFamily>
     <FontWeight x:Key="IconFontWeight">Normal</FontWeight>
-    <FontFamily x:Key="MessageFontFamily">Tahoma</FontFamily>
+    <FontFamily x:Key="MessageFontFamily">Segoe UI</FontFamily>
     <FontWeight x:Key="MessageFontWeight">Normal</FontWeight>
-    <FontFamily x:Key="CaptionFontFamily">Tahoma</FontFamily>
+    <FontFamily x:Key="CaptionFontFamily">Segoe UI</FontFamily>
     <FontWeight x:Key="CaptionFontWeight">Bold</FontWeight>
 
     <Geometry x:Key="Checkmark">M0,2 L0,4.8 L2.5,7.4 L7.1,2.8 L7.1,0 L2.5,4.6 z</Geometry>
@@ -921,7 +921,10 @@
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Padding" Value="0" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="TextWrapping"
+                Value="Wrap" />
         <Setter Property="Foreground" Value="{DynamicResource Text1Brush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="false">
