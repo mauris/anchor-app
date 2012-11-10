@@ -2,32 +2,56 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:anchor"
-        Title="Anchor" Height="500" Width="300" Background="{DynamicResource BackgroundBrush}" Loaded="Window_Loaded" MinWidth="250" MinHeight="250" Icon="/anchor;component/anchor-icon.ico">
+        Title="Anchor"
+        Height="500"
+        Width="300"
+        Background="{DynamicResource BackgroundBrush}"
+        Loaded="Window_Loaded"
+        MinWidth="250"
+        MinHeight="250"
+        Icon="/anchor;component/anchor-icon.ico">
     <Window.Resources>
 
         <DataTemplate x:Key="ItemTemplate">
-            <StackPanel Orientation="Vertical" Margin="0">
+            <StackPanel Orientation="Vertical"
+                        Margin="0">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Image Source="{Binding GetFavicon}" Grid.Column="0" Width="16" Height="16" />
-                    <TextBlock Text="{Binding Name}" Grid.Column="1" FontSize="12"></TextBlock>
-                    <TextBlock Text=".dev" Grid.Column="2" Margin="3,0,0,0" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                    <Image Source="{Binding GetFavicon}"
+                           Grid.Column="0"
+                           Width="16"
+                           Height="16" />
+                    <TextBlock Text="{Binding Name}"
+                               Grid.Column="1"
+                               FontSize="12"></TextBlock>
+                    <TextBlock Text=".dev"
+                               Grid.Column="2"
+                               Margin="3,0,0,0"
+                               Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
                 </Grid>
-                <StackPanel HorizontalAlignment="Stretch" Height="3">
-                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                    <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
-                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                <StackPanel HorizontalAlignment="Stretch"
+                            Height="3">
+                    <Rectangle Fill="#484848"
+                               Height="1"
+                               RenderOptions.EdgeMode="Aliased" />
+                    <Rectangle Fill="#222222"
+                               Height="1"
+                               RenderOptions.EdgeMode="Aliased" />
+                    <Rectangle Fill="#484848"
+                               Height="1"
+                               RenderOptions.EdgeMode="Aliased" />
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
 
         <DataTemplate x:Key="SelectedTemplate">
             <StackPanel Orientation="Vertical">
-                <Grid Margin="10" HorizontalAlignment="Stretch">
+                <Grid Margin="10"
+                      HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40" />
                         <ColumnDefinition Width="Auto" />
@@ -37,20 +61,35 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Image Source="{Binding GetFavicon}" Width="16" Height="16" />
-                    <TextBlock Text="{Binding Name}" Grid.Column="1" FontSize="14"></TextBlock>
-                    <TextBlock Text=".dev" Grid.Column="2" Margin="2,0,0,0" FontSize="14" Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
-                    <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0, 10, 0, 0">
+                    <Image Source="{Binding GetFavicon}"
+                           Width="16"
+                           Height="16" />
+                    <TextBlock Text="{Binding Name}"
+                               Grid.Column="1"
+                               FontSize="14"></TextBlock>
+                    <TextBlock Text=".dev"
+                               Grid.Column="2"
+                               Margin="2,0,0,0"
+                               FontSize="14"
+                               Foreground="{StaticResource ButtonDisabledTextBrush}"></TextBlock>
+                    <Grid Grid.Row="1"
+                          Grid.Column="1"
+                          Grid.ColumnSpan="2"
+                          Margin="0, 10, 0, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostOpen" Click="btnHostOpen_Click">
+                        <Button Grid.Column="0"
+                                Margin="0, 0, 15, 0"
+                                Cursor="Hand"
+                                Name="btnHostOpen"
+                                Click="btnHostOpen_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
+                                                      VerticalAlignment="Center" />
                                 </ControlTemplate>
                             </Button.Template>
                             <Button.ContentTemplate>
@@ -60,19 +99,29 @@
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
-                                        <Image Grid.Column="0" Source="Assets/world.png" Width="16" Height="16" RenderOptions.EdgeMode="Aliased" />
-                                        <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
+                                        <Image Grid.Column="0"
+                                               Source="Assets/world.png"
+                                               Width="16"
+                                               Height="16"
+                                               RenderOptions.EdgeMode="Aliased" />
+                                        <TextBlock Grid.Column="1"
+                                                   Margin="3,2,0,0"
+                                                   FontSize="10">
                                             Open
                                         </TextBlock>
                                     </Grid>
                                 </DataTemplate>
                             </Button.ContentTemplate>
                         </Button>
-                        <Button Grid.Column="1" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostBrowse" Click="btnHostBrowse_Click">
+                        <Button Grid.Column="1"
+                                Margin="0, 0, 15, 0"
+                                Cursor="Hand"
+                                Name="btnHostBrowse"
+                                Click="btnHostBrowse_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
+                                                      VerticalAlignment="Center" />
                                 </ControlTemplate>
                             </Button.Template>
                             <Button.ContentTemplate>
@@ -82,19 +131,29 @@
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
-                                        <Image Grid.Column="0" Source="Assets/folder.png" Width="16" Height="16" RenderOptions.EdgeMode="Aliased" />
-                                        <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
+                                        <Image Grid.Column="0"
+                                               Source="Assets/folder.png"
+                                               Width="16"
+                                               Height="16"
+                                               RenderOptions.EdgeMode="Aliased" />
+                                        <TextBlock Grid.Column="1"
+                                                   Margin="3,2,0,0"
+                                                   FontSize="10">
                                             Browse
                                         </TextBlock>
                                     </Grid>
                                 </DataTemplate>
                             </Button.ContentTemplate>
                         </Button>
-                        <Button Grid.Column="2" Margin="0, 0, 15, 0" Cursor="Hand" Name="btnHostDelete" Click="btnHostDelete_Click">
+                        <Button Grid.Column="2"
+                                Margin="0, 0, 15, 0"
+                                Cursor="Hand"
+                                Name="btnHostDelete"
+                                Click="btnHostDelete_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
+                                                      VerticalAlignment="Center" />
                                 </ControlTemplate>
                             </Button.Template>
                             <Button.ContentTemplate>
@@ -104,8 +163,14 @@
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
-                                        <Image Grid.Column="0" Source="Assets/bin.png" Width="16" Height="16" RenderOptions.EdgeMode="Aliased" />
-                                        <TextBlock Grid.Column="1" Margin="3,2,0,0" FontSize="10">
+                                        <Image Grid.Column="0"
+                                               Source="Assets/bin.png"
+                                               Width="16"
+                                               Height="16"
+                                               RenderOptions.EdgeMode="Aliased" />
+                                        <TextBlock Grid.Column="1"
+                                                   Margin="3,2,0,0"
+                                                   FontSize="10">
                                             Delete
                                         </TextBlock>
                                     </Grid>
@@ -114,45 +179,71 @@
                         </Button>
                     </Grid>
                 </Grid>
-            <StackPanel HorizontalAlignment="Stretch" Height="3">
-                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
-                <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-            </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch"
+                            Height="3">
+                    <Rectangle Fill="#484848"
+                               Height="1"
+                               RenderOptions.EdgeMode="Aliased" />
+                    <Rectangle Fill="#222222"
+                               Height="1"
+                               RenderOptions.EdgeMode="Aliased" />
+                    <Rectangle Fill="#484848"
+                               Height="1"
+                               RenderOptions.EdgeMode="Aliased" />
+                </StackPanel>
             </StackPanel>
         </DataTemplate>
-        
-        <Style TargetType="{x:Type TextBlock}" x:Key="SettingsAboutTextLabel">
+
+        <Style TargetType="{x:Type TextBlock}"
+               x:Key="SettingsAboutTextLabel">
             <Setter Property="TextBlock.Effect">
                 <Setter.Value>
-                    <DropShadowEffect Color="Black" Direction="135" ShadowDepth="1" BlurRadius="1" Opacity=".2" />
+                    <DropShadowEffect Color="Black"
+                                      Direction="135"
+                                      ShadowDepth="1"
+                                      BlurRadius="1"
+                                      Opacity=".2" />
                 </Setter.Value>
             </Setter>
-            <Setter Property="Foreground" Value="#BABABA" />
-            <Setter Property="FontSize" Value="11" />
+            <Setter Property="Foreground"
+                    Value="#BABABA" />
+            <Setter Property="FontSize"
+                    Value="11" />
         </Style>
 
-        <Style TargetType="{x:Type ListBoxItem}" x:Key="ContainerStyle">
+        <Style TargetType="{x:Type ListBoxItem}"
+               x:Key="ContainerStyle">
             <Style.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
-                             Color="#484848"/>
+                                 Color="#484848" />
             </Style.Resources>
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="ContentTemplate" Value="{StaticResource ItemTemplate}" />
+            <Setter Property="BorderThickness"
+                    Value="0" />
+            <Setter Property="Margin"
+                    Value="0" />
+            <Setter Property="Padding"
+                    Value="0" />
+            <Setter Property="ContentTemplate"
+                    Value="{StaticResource ItemTemplate}" />
             <Style.Triggers>
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
-                        <Condition Property="IsMouseOver" Value="true" />
-                        <Condition Property="IsSelected" Value="false" />
+                        <Condition Property="IsMouseOver"
+                                   Value="true" />
+                        <Condition Property="IsSelected"
+                                   Value="false" />
                     </MultiTrigger.Conditions>
-                    <Setter Property="Background" Value="{DynamicResource ButtonOverBrush}" />
-                    <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
+                    <Setter Property="Background"
+                            Value="{DynamicResource ButtonOverBrush}" />
+                    <Setter Property="Foreground"
+                            Value="{DynamicResource BackgroundBrush}" />
                 </MultiTrigger>
-                <Trigger Property="IsSelected" Value="true">
-                    <Setter Property="Background" Value="#484848" />
-                    <Setter Property="ContentTemplate" Value="{StaticResource SelectedTemplate}" />
+                <Trigger Property="IsSelected"
+                         Value="true">
+                    <Setter Property="Background"
+                            Value="#484848" />
+                    <Setter Property="ContentTemplate"
+                            Value="{StaticResource SelectedTemplate}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -160,60 +251,116 @@
     </Window.Resources>
     <Grid Name="pnlUniverse">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid Name="pnlLicense" Visibility="Collapsed">
+        <Grid Name="pnlLicense"
+              Visibility="Collapsed">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel Margin="20">
                     <StackPanel>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">Anchor App</TextBlock>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">Main Application</TextBlock>
-                        <TextBlock Name="lblLicenseAnchor" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">Anchor App</TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">Main Application</TextBlock>
+                        <TextBlock Name="lblLicenseAnchor"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
                     </StackPanel>
 
                     <StackPanel>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">famfamfam Silk Icons</TextBlock>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">Tiny little icons that are found in the application.</TextBlock>
-                        <TextBlock Name="lblLicenseF3Silk" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">famfamfam Silk Icons</TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">Tiny little icons that are found in the application.</TextBlock>
+                        <TextBlock Name="lblLicenseF3Silk"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
                     </StackPanel>
 
                     <StackPanel>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">Images and Media</TextBlock>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">All other media found in the application.</TextBlock>
-                        <TextBlock Name="lblLicenseMedia" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">Images and Media</TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">All other media found in the application.</TextBlock>
+                        <TextBlock Name="lblLicenseMedia"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
                     </StackPanel>
-                    
+
                     <StackPanel>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="14" Margin="0,0,0,5" TextAlignment="Center">INIParser.dll</TextBlock>
-                        <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,5">Used to load INI files in WampServer configuration</TextBlock>
-                        <TextBlock Name="lblLicenseINIParser" TextWrapping="Wrap" Foreground="#DDD" FontSize="10" Margin="0,0,0,15"></TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">INIParser.dll</TextBlock>
+                        <TextBlock Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">Used to load INI files in WampServer configuration</TextBlock>
+                        <TextBlock Name="lblLicenseINIParser"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
-            <Button Grid.Row="1" Name="btnLicenseClose" Margin="5" Click="btnLicenseClose_Click">Close</Button>
+            <Button Grid.Row="1"
+                    Name="btnLicenseClose"
+                    Margin="5"
+                    Click="btnLicenseClose_Click">Close</Button>
         </Grid>
-        <Grid Name="pnlMainContent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid Name="pnlMainContent"
+              VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-        
+
             <!-- Toolbar starts -->
-            <StackPanel Grid.Row="0" Name="pnlToolbar" Height="40">
+            <StackPanel Grid.Row="0"
+                        Name="pnlToolbar"
+                        Height="40">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Assets/toolbar-background.png" />
                 </StackPanel.Background>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40" />
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="40" />
                     </Grid.ColumnDefinitions>
-                    <Button Name="btnSettings" Grid.Column="0" Width="40" Height="40" Click="btnSettings_Click">
+                    <Button Name="btnSettings"
+                            Grid.Column="0"
+                            Width="40"
+                            Height="40"
+                            Click="btnSettings_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"></Border>
@@ -221,30 +368,39 @@
                         </Button.Template>
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
-                                <Setter Property="Cursor" Value="Hand" />
-                                <Setter Property="Content" Value="" />
+                                <Setter Property="Cursor"
+                                        Value="Hand" />
+                                <Setter Property="Content"
+                                        Value="" />
                                 <Setter Property="Background">
                                     <Setter.Value>
-                                        <ImageBrush ImageSource="Assets/settings-button-normal.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
+                                        <ImageBrush ImageSource="Assets/settings-button-normal.png"
+                                                    RenderOptions.EdgeMode="Aliased"></ImageBrush>
                                     </Setter.Value>
                                 </Setter>
                                 <Style.Triggers>
-                                    <Trigger Property="Content" Value="set">
+                                    <Trigger Property="Content"
+                                             Value="set">
                                         <Setter Property="Background">
                                             <Setter.Value>
-                                                <ImageBrush ImageSource="Assets/settings-button-set.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
+                                                <ImageBrush ImageSource="Assets/settings-button-set.png"
+                                                            RenderOptions.EdgeMode="Aliased"></ImageBrush>
                                             </Setter.Value>
                                         </Setter>
-                                        <Setter Property="Cursor" Value="Arrow" />
+                                        <Setter Property="Cursor"
+                                                Value="Arrow" />
                                     </Trigger>
                                     <MultiTrigger>
                                         <MultiTrigger.Conditions>
-                                            <Condition Property="IsMouseOver" Value="true" />
-                                            <Condition Property="Content" Value="" />
+                                            <Condition Property="IsMouseOver"
+                                                       Value="true" />
+                                            <Condition Property="Content"
+                                                       Value="" />
                                         </MultiTrigger.Conditions>
                                         <Setter Property="Background">
                                             <Setter.Value>
-                                                <ImageBrush ImageSource="Assets/settings-button-hover.png" RenderOptions.EdgeMode="Aliased"></ImageBrush>
+                                                <ImageBrush ImageSource="Assets/settings-button-hover.png"
+                                                            RenderOptions.EdgeMode="Aliased"></ImageBrush>
                                             </Setter.Value>
                                         </Setter>
                                     </MultiTrigger>
@@ -258,110 +414,201 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <!-- the togglebutton will be missing in x64 compilation because the x86 VS2010 can't detect -->
-                        <local:ToggleButton x:Name="tgbEnableDisable" Margin="10,0,0,0" Width="44" Height="22"
-                                        Changed="tgbEnableDisable_Changed"
-                                        UncheckedImage="Assets/toggle-off-normal.png"
-                                        UncheckedHoverImage="Assets/toggle-off-hover.png"
-                                        CheckedImage="Assets/toggle-on-normal.png"
-                                        CheckedHoverImage="Assets/toggle-on-hover.png">
+                        <local:ToggleButton x:Name="tgbEnableDisable"
+                                            Margin="10,0,0,0"
+                                            Width="44"
+                                            Height="22"
+                                            Changed="tgbEnableDisable_Changed"
+                                            UncheckedImage="Assets/toggle-off-normal.png"
+                                            UncheckedHoverImage="Assets/toggle-off-hover.png"
+                                            CheckedImage="Assets/toggle-on-normal.png"
+                                            CheckedHoverImage="Assets/toggle-on-hover.png">
                         </local:ToggleButton>
-                        <TextBlock Grid.Column="1" Margin="5,0,0,0" Foreground="White" FontSize="10" VerticalAlignment="Center" Name="lblToggleState">OFF</TextBlock>
+                        <TextBlock Grid.Column="1"
+                                   Margin="5,0,0,0"
+                                   Foreground="White"
+                                   FontSize="10"
+                                   VerticalAlignment="Center"
+                                   Name="lblToggleState">OFF</TextBlock>
                     </Grid>
-                    <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Padding="0" Grid.Column="2" Click="btnAddHostToggle_Click">
+                    <Button Name="btnAddHostToggle"
+                            Height="28"
+                            Width="28"
+                            Margin="6"
+                            Padding="0"
+                            Grid.Column="2"
+                            Click="btnAddHostToggle_Click">
                         <Button.Content>
-                            <Image Source="Assets/plus.png" Width="12" Height="12" RenderOptions.EdgeMode="Aliased"></Image>
+                            <Image Source="Assets/plus.png"
+                                   Width="12"
+                                   Height="12"
+                                   RenderOptions.EdgeMode="Aliased"></Image>
                         </Button.Content>
                     </Button>
                 </Grid>
             </StackPanel>
             <!-- toolbar ends -->
-        
+
             <!-- main content's here -->
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer Grid.Row="1"
+                          VerticalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Grid Name="pnlSettings" Background="#666666" Visibility="Collapsed">
-                        <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid Name="pnlSettings"
+                          Background="#666666"
+                          Visibility="Collapsed">
+                        <Grid  VerticalAlignment="Stretch"
+                               HorizontalAlignment="Stretch">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <StackPanel>
-                                <Rectangle RenderOptions.EdgeMode="Aliased" Height="1" Fill="#222" Margin="38, 0,0,0" />
+                                <Rectangle RenderOptions.EdgeMode="Aliased"
+                                           Height="1"
+                                           Fill="#222"
+                                           Margin="38, 0,0,0" />
                                 <StackPanel Margin="20,15,25,15">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition />
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
-                                        <TextBlock Text="WAMPSERVER INSTALLATION" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                        <TextBox Grid.Row="1" Name="txtWampServerPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14"></TextBox>
-                                        <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="31" VerticalAlignment="Top" Margin="2" Tag="txtWampServerPath" Click="btnBrowsePath_Click">
-                                            <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                                        <TextBlock Text="WAMPSERVER INSTALLATION"
+                                                   Foreground="{DynamicResource Text1Brush}"
+                                                   Grid.Row="0"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="11"></TextBlock>
+                                        <TextBox Grid.Row="1"
+                                                 Name="txtWampServerPath"
+                                                 Width="Auto"
+                                                 Background="White"
+                                                 Foreground="{DynamicResource BackgroundBrush}"
+                                                 Margin="0,3,0,10"
+                                                 FontFamily="Segoe UI"
+                                                 FontSize="14"></TextBox>
+                                        <Button Grid.Row="1"
+                                                Grid.Column="1"
+                                                Padding="3"
+                                                Height="31"
+                                                VerticalAlignment="Top"
+                                                Margin="2"
+                                                Tag="txtWampServerPath"
+                                                Click="btnBrowsePath_Click">
+                                            <Image Source="Assets/folder.png"
+                                                   Height="16"
+                                                   Width="16"
+                                                   SnapsToDevicePixels="True"></Image>
                                         </Button>
                                     </Grid>
                                     <Grid Margin="0,20,0,0">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-                                        <Button Content="Save" Name="btnSettingsSave" Grid.Column="0" Padding="10,5" Click="btnSettingsSave_Click"></Button>
-                                        <Button Content="Cancel" Name="btnSettingsCancel" Grid.Column="2" Padding="10,5" Click="btnSettingsCancel_Click"></Button>
+                                        <Button Content="Save"
+                                                Name="btnSettingsSave"
+                                                Grid.Column="0"
+                                                Padding="10,5"
+                                                Click="btnSettingsSave_Click"></Button>
+                                        <Button Content="Cancel"
+                                                Name="btnSettingsCancel"
+                                                Grid.Column="2"
+                                                Padding="10,5"
+                                                Click="btnSettingsCancel_Click"></Button>
                                     </Grid>
                                 </StackPanel>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="1" Margin="20">
-                                <TextBlock Name="lblAbout" Style="{StaticResource SettingsAboutTextLabel}">
+                            <StackPanel Grid.Row="1"
+                                        Margin="20">
+                                <TextBlock Name="lblAbout"
+                                           Style="{StaticResource SettingsAboutTextLabel}">
                                         %version%
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
-                                    By <Hyperlink Foreground="#94DCF2" NavigateUri="http://mauris.sg/" RequestNavigate="Hyperlink_RequestNavigate">Sam-Mauris Yong</Hyperlink>.
-                                    <Hyperlink Foreground="#94DCF2" NavigateUri="#" RequestNavigate="License_RequestNavigate">License and Agreement</Hyperlink>.
+                                    By <Hyperlink Foreground="#94DCF2"
+                                                  NavigateUri="http://mauris.sg/"
+                                                  RequestNavigate="Hyperlink_RequestNavigate">Sam-Mauris Yong</Hyperlink>.
+                                    <Hyperlink Foreground="#94DCF2"
+                                               NavigateUri="#"
+                                               RequestNavigate="License_RequestNavigate">License and Agreement</Hyperlink>.
                                 </TextBlock>
                                 <TextBlock Style="{StaticResource SettingsAboutTextLabel}">
-                                    Source on <Hyperlink Foreground="#94DCF2" NavigateUri="https://github.com/thephpdeveloper/anchor-app" RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink> 
+                                    Source on <Hyperlink Foreground="#94DCF2"
+                                                         NavigateUri="https://github.com/thephpdeveloper/anchor-app"
+                                                         RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink>
                                 </TextBlock>
                             </StackPanel>
                         </Grid>
                     </Grid>
                     <Grid Name="pnlContent">
                         <Grid.Background>
-                            <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
-                                        AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
+                            <ImageBrush ImageSource="Assets/toolbar-shadow.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"
+                                        AlignmentY="Top"
+                                        Viewport="0,0,20,100000"
+                                        ViewportUnits="Absolute"
+                                        TileMode="FlipX"
+                                        RenderOptions.EdgeMode="Aliased" />
                         </Grid.Background>
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <!-- add host form starts -->
-                            <StackPanel Name="pnlAddHost" Visibility="Collapsed">
+                            <StackPanel Name="pnlAddHost"
+                                        Visibility="Collapsed">
                                 <StackPanel Margin="20,15,25,15">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition />
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
-                                        <TextBlock Text="DOMAIN" Foreground="{DynamicResource Text1Brush}" Grid.Row="0" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                        <TextBox Grid.Row="1" MaxLength="20" Name="txtAddHostName" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14">
+                                        <TextBlock Text="DOMAIN"
+                                                   Foreground="{DynamicResource Text1Brush}"
+                                                   Grid.Row="0"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="11"></TextBlock>
+                                        <TextBox Grid.Row="1"
+                                                 MaxLength="20"
+                                                 Name="txtAddHostName"
+                                                 Width="Auto"
+                                                 Background="White"
+                                                 Foreground="{DynamicResource BackgroundBrush}"
+                                                 Margin="0,3,0,10"
+                                                 FontFamily="Segoe UI"
+                                                 FontSize="14">
                                             <TextBox.Template>
                                                 <ControlTemplate>
-                                                    <Border Focusable="false" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                                                    <Border Focusable="false"
+                                                            Background="{TemplateBinding Background}"
+                                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                                            CornerRadius="2">
                                                         <Grid>
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="Auto" />
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
-                                                            <ScrollViewer Name="PART_ContentHost" Padding="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
-                                                            <TextBlock Grid.Column="1" Text=".dev" Margin="-5, 5,0,0" Foreground="Gray" Cursor="IBeam" />
+                                                            <ScrollViewer Name="PART_ContentHost"
+                                                                          Padding="{TemplateBinding Padding}"
+                                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                                                            <TextBlock Grid.Column="1"
+                                                                       Text=".dev"
+                                                                       Margin="-5, 5,0,0"
+                                                                       Foreground="Gray"
+                                                                       Cursor="IBeam" />
                                                         </Grid>
                                                     </Border>
                                                 </ControlTemplate>
@@ -370,38 +617,91 @@
                                     </Grid>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition />
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
-                                        <TextBlock Text="PATH" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource Text1Brush}" FontFamily="Segoe UI" FontSize="11"></TextBlock>
-                                        <TextBox Grid.Row="1" Name="txtAddHostPath" Width="Auto" Background="White" Foreground="{DynamicResource BackgroundBrush}" Margin="0,3,0,10" FontFamily="Segoe UI" FontSize="14"></TextBox>
-                                        <Button Grid.Row="1" Grid.Column="1" Padding="3" Height="31" VerticalAlignment="Top" Margin="2" Tag="txtAddHostPath" Click="btnBrowsePath_Click">
-                                            <Image Source="Assets/folder.png" Height="16" Width="16" SnapsToDevicePixels="True"></Image>
+                                        <TextBlock Text="PATH"
+                                                   Grid.Column="0"
+                                                   Grid.Row="0"
+                                                   Grid.ColumnSpan="2"
+                                                   Foreground="{DynamicResource Text1Brush}"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="11"></TextBlock>
+                                        <TextBox Grid.Row="1"
+                                                 Name="txtAddHostPath"
+                                                 Width="Auto"
+                                                 Background="White"
+                                                 Foreground="{DynamicResource BackgroundBrush}"
+                                                 Margin="0,3,0,10"
+                                                 FontFamily="Segoe UI"
+                                                 FontSize="14"></TextBox>
+                                        <Button Grid.Row="1"
+                                                Grid.Column="1"
+                                                Padding="3"
+                                                Height="31"
+                                                VerticalAlignment="Top"
+                                                Margin="2"
+                                                Tag="txtAddHostPath"
+                                                Click="btnBrowsePath_Click">
+                                            <Image Source="Assets/folder.png"
+                                                   Height="16"
+                                                   Width="16"
+                                                   SnapsToDevicePixels="True"></Image>
                                         </Button>
                                     </Grid>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-                                        <Button Content="Add" Name="btnAddHost" Grid.Column="0" Padding="10,5" Click="btnAddHost_Click"></Button>
-                                        <Button Content="Cancel" Name="btnAddHostCancel" Grid.Column="2" Padding="10,5" Click="btnAddHostCancel_Click"></Button>
+                                        <Button Content="Add"
+                                                Name="btnAddHost"
+                                                Grid.Column="0"
+                                                Padding="10,5"
+                                                Click="btnAddHost_Click"></Button>
+                                        <Button Content="Cancel"
+                                                Name="btnAddHostCancel"
+                                                Grid.Column="2"
+                                                Padding="10,5"
+                                                Click="btnAddHostCancel_Click"></Button>
                                     </Grid>
                                 </StackPanel>
-                                <StackPanel HorizontalAlignment="Stretch" Height="3">
-                                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
-                                    <Rectangle Fill="#222222" Height="1" RenderOptions.EdgeMode="Aliased" />
-                                    <Rectangle Fill="#484848" Height="1" RenderOptions.EdgeMode="Aliased" />
+                                <StackPanel HorizontalAlignment="Stretch"
+                                            Height="3">
+                                    <Rectangle Fill="#484848"
+                                               Height="1"
+                                               RenderOptions.EdgeMode="Aliased" />
+                                    <Rectangle Fill="#222222"
+                                               Height="1"
+                                               RenderOptions.EdgeMode="Aliased" />
+                                    <Rectangle Fill="#484848"
+                                               Height="1"
+                                               RenderOptions.EdgeMode="Aliased" />
                                 </StackPanel>
                             </StackPanel>
                             <!-- add form ends -->
-                            <TextBlock Grid.Row="1" Name="lblNoSites" FontSize="16" Margin="10" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
-                            <ListBox Grid.Row="1" Name="lstSites" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ContainerStyle}" HorizontalContentAlignment="Stretch" Visibility="Collapsed" Padding="0" Margin="0">
+                            <TextBlock Grid.Row="1"
+                                       Name="lblNoSites"
+                                       FontSize="16"
+                                       Margin="10"
+                                       TextWrapping="Wrap"
+                                       Foreground="White"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Stretch"
+                                       TextAlignment="Center">No anchors found. Click "+" to add new anchor.</TextBlock>
+                            <ListBox Grid.Row="1"
+                                     Name="lstSites"
+                                     ItemsSource="{Binding}"
+                                     ItemContainerStyle="{StaticResource ContainerStyle}"
+                                     HorizontalContentAlignment="Stretch"
+                                     Visibility="Collapsed"
+                                     Padding="0"
+                                     Margin="0">
                                 <ListBox.Template>
                                     <ControlTemplate TargetType="{x:Type ListBox}">
                                         <ItemsPresenter />
@@ -413,7 +713,7 @@
                 </Grid>
             </ScrollViewer>
             <!-- end of main content -->
-        
+
         </Grid>
     </Grid>
 </Window>
