@@ -132,9 +132,17 @@ namespace anchor
 
         private void ToggleButton_CheckedChanged(object sender, RoutedEventArgs e)
         {
+            ChangeImage();
             if (Changed != null)
             {
-                Changed(this, e);
+                try
+                {
+                    Changed(this, e);
+                }
+                catch
+                {
+
+                }
             }
         }
 
