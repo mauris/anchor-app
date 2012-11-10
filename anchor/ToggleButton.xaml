@@ -11,7 +11,5 @@
             <ContentPresenter Content="{TemplateBinding Button.Content}"/>
         </ControlTemplate>
     </ToggleButton.Template>
-    <ToggleButton.Content>
-        <Image x:Name="ButtonImage" />
-    </ToggleButton.Content>
+    <Image x:Name="ButtonImage" />
 </ToggleButton>

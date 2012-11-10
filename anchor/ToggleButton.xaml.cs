@@ -133,11 +133,11 @@ namespace anchor
         private void ToggleButton_CheckedChanged(object sender, RoutedEventArgs e)
         {
             this.IsChecked = (bool)((System.Windows.Controls.Primitives.ToggleButton)sender).IsChecked;
+            ChangeImage();
             if (Changed != null)
             {
                 Changed(this, e);
             }
-            ChangeImage();
         }
 
         private void ToggleButton_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
