@@ -272,80 +272,6 @@
                 </StackPanel>
             </ScrollViewer>
         </Grid>
-        <Grid Name="pnlLicense"
-              Visibility="Collapsed">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <StackPanel Margin="20">
-                    <StackPanel>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="14"
-                                   Margin="0,0,0,5"
-                                   TextAlignment="Center">Anchor App</TextBlock>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="12"
-                                   Margin="0,0,0,5">Main Application</TextBlock>
-                        <TextBlock Name="lblLicenseAnchor"
-                                   TextWrapping="Wrap"
-                                   Foreground="#DDD"
-                                   FontSize="10"
-                                   Margin="0,0,0,15"></TextBlock>
-                    </StackPanel>
-
-                    <StackPanel>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="14"
-                                   Margin="0,0,0,5"
-                                   TextAlignment="Center">famfamfam Silk Icons</TextBlock>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="12"
-                                   Margin="0,0,0,5">Tiny little icons that are found in the application.</TextBlock>
-                        <TextBlock Name="lblLicenseF3Silk"
-                                   TextWrapping="Wrap"
-                                   Foreground="#DDD"
-                                   FontSize="10"
-                                   Margin="0,0,0,15"></TextBlock>
-                    </StackPanel>
-
-                    <StackPanel>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="14"
-                                   Margin="0,0,0,5"
-                                   TextAlignment="Center">Images and Media</TextBlock>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="12"
-                                   Margin="0,0,0,5">All other media found in the application.</TextBlock>
-                        <TextBlock Name="lblLicenseMedia"
-                                   TextWrapping="Wrap"
-                                   Foreground="#DDD"
-                                   FontSize="10"
-                                   Margin="0,0,0,15"></TextBlock>
-                    </StackPanel>
-
-                    <StackPanel>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="14"
-                                   Margin="0,0,0,5"
-                                   TextAlignment="Center">INIParser.dll</TextBlock>
-                        <TextBlock TextWrapping="Wrap"
-                                   FontSize="12"
-                                   Margin="0,0,0,5">Used to load INI files in WampServer configuration</TextBlock>
-                        <TextBlock Name="lblLicenseINIParser"
-                                   TextWrapping="Wrap"
-                                   Foreground="#DDD"
-                                   FontSize="10"
-                                   Margin="0,0,0,15"></TextBlock>
-                    </StackPanel>
-                </StackPanel>
-            </ScrollViewer>
-            <Button Grid.Row="1"
-                    Name="btnLicenseClose"
-                    Margin="5"
-                    Click="btnLicenseClose_Click">Close</Button>
-        </Grid>
         <Grid Name="pnlMainContent"
               VerticalAlignment="Stretch"
               HorizontalAlignment="Stretch" Visibility="Visible">
@@ -667,6 +593,81 @@
             </ScrollViewer>
             <!-- end of main content -->
 
+        </Grid>
+        <Grid Name="pnlLicense"
+              Visibility="Collapsed"
+              Background="{DynamicResource BackgroundBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="20">
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">Anchor App</TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">Main Application</TextBlock>
+                        <TextBlock Name="lblLicenseAnchor"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">famfamfam Silk Icons</TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">Tiny little icons that are found in the application.</TextBlock>
+                        <TextBlock Name="lblLicenseF3Silk"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">Images and Media</TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">All other media found in the application.</TextBlock>
+                        <TextBlock Name="lblLicenseMedia"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Margin="0,0,0,5"
+                                   TextAlignment="Center">INIParser.dll</TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Margin="0,0,0,5">Used to load INI files in WampServer configuration</TextBlock>
+                        <TextBlock Name="lblLicenseINIParser"
+                                   TextWrapping="Wrap"
+                                   Foreground="#DDD"
+                                   FontSize="10"
+                                   Margin="0,0,0,15"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+            <Button Grid.Row="1"
+                    Name="btnLicenseClose"
+                    Margin="5"
+                    Click="btnLicenseClose_Click">Close</Button>
         </Grid>
     </Grid>
 </Window>

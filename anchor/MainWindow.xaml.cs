@@ -277,13 +277,11 @@ namespace anchor
         private void btnLicenseClose_Click(object sender, RoutedEventArgs e)
         {
             pnlLicense.Visibility = System.Windows.Visibility.Collapsed;
-            pnlMainContent.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void License_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             pnlLicense.Visibility = System.Windows.Visibility.Visible;
-            pnlMainContent.Visibility = System.Windows.Visibility.Collapsed;
             e.Handled = true;
         }
 
@@ -330,7 +328,7 @@ namespace anchor
 
         private void SetupSave(object sender, SettingsSaveEventArgs e)
         {
-            settings.WampServerPath = e.Settings.WampServerPath;
+            settings = e.Settings;
             tgbEnableDisable.IsChecked = settings.Enabled;
             pnlMainContent.Visibility = System.Windows.Visibility.Visible;
             pnlSetup.Visibility = System.Windows.Visibility.Collapsed;
