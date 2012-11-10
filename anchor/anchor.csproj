@@ -98,6 +98,9 @@
     <Compile Include="Favicon.cs" />
     <Compile Include="HostEditor.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="ToggleButton.xaml.cs">
+      <DependentUpon>ToggleButton.xaml</DependentUpon>
+    </Compile>
     <Page Include="AppStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +119,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -194,6 +201,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="anchor-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\toggle-off-hover.png" />
+    <Resource Include="Assets\toggle-off-normal.png" />
+    <Resource Include="Assets\toggle-on-hover.png" />
+    <Resource Include="Assets\toggle-on-normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
