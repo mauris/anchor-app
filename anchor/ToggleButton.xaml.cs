@@ -19,7 +19,7 @@ namespace anchor
     /// </summary>
     public partial class ToggleButton : System.Windows.Controls.Primitives.ToggleButton
     {
-        public new bool IsChecked { get { return (bool)base.IsChecked; } set { base.IsChecked = value; } }
+        public new bool IsChecked { get { return (bool)base.IsChecked; } set { ChangeImage(); base.IsChecked = value; } }
 
         public event EventHandler Changed;
 
@@ -132,8 +132,6 @@ namespace anchor
 
         private void ToggleButton_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            this.IsChecked = (bool)((System.Windows.Controls.Primitives.ToggleButton)sender).IsChecked;
-            ChangeImage();
             if (Changed != null)
             {
                 Changed(this, e);
