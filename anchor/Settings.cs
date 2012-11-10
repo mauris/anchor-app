@@ -6,7 +6,7 @@ using System.Text;
 namespace anchor
 {
     [Serializable]
-    class Settings
+    public class Settings
     {
 
         public string WampServerPath { get; set; }
