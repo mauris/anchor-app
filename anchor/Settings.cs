@@ -11,5 +11,7 @@ namespace anchor
 
         public string WampServerPath { get; set; }
 
+        public bool Enabled { get; set; }
+
     }
 }

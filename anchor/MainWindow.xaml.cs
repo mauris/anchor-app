@@ -76,11 +76,13 @@ namespace anchor
                 {
                     settings = new Settings();
                     settings.WampServerPath = @"C:\wamp";
+                    settings.Enabled = true;
                 }
             }
             catch (IOException)
             {
                 settings.WampServerPath = @"C:\wamp";
+                settings.Enabled = true;
             }
         }
 
