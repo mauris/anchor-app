@@ -92,7 +92,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataFile.cs" />
     <Compile Include="Drivers\Driver.cs" />
     <Compile Include="Drivers\WampServer.cs" />
     <Compile Include="Favicon.cs" />
@@ -214,6 +213,12 @@
     <Resource Include="Assets\toggle-off-normal.png" />
     <Resource Include="Assets\toggle-on-hover.png" />
     <Resource Include="Assets\toggle-on-normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\anchor.commons\anchor.commons.csproj">
+      <Project>{F2B7AF66-A203-4D24-AE11-F7D20468A540}</Project>
+      <Name>anchor.commons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
