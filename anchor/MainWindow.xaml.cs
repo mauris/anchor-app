@@ -84,18 +84,16 @@ namespace anchor
                 settings = DataFile.Read<Settings>("settings.bin");
                 if (settings == null)
                 {
-                    settings = new Settings();
-                    settings.WampServerPath = @"C:\wamp";
-                    settings.Enabled = true;
+                    throw new ArgumentNullException();
                 }
+                tgbEnableDisable.IsChecked = settings.Enabled;
             }
-            catch (IOException)
+            catch (Exception)
             {
-                settings.WampServerPath = @"C:\wamp";
-                settings.Enabled = true;
+                pnlSetup.Visibility = System.Windows.Visibility.Visible;
+                pnlMainContent.Visibility = System.Windows.Visibility.Collapsed;
+                tgbEnableDisable.IsChecked = false;
             }
-
-            tgbEnableDisable.IsChecked = settings.Enabled;
         }
 
         private void loadEntries()

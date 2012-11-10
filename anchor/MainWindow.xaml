@@ -253,6 +253,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid Name="pnlSetup"
+              Visibility="Collapsed">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            </ScrollViewer>
+        </Grid>
         <Grid Name="pnlLicense"
               Visibility="Collapsed">
             <Grid.RowDefinitions>
