@@ -373,6 +373,9 @@ namespace anchor
                     File.Copy(hostFile + ".orig", hostFile);
                 }
 
+                lblNoSites.Visibility = System.Windows.Visibility.Visible;
+                lstSites.Visibility = System.Windows.Visibility.Collapsed;
+                closeSettingsPanel();
                 pnlSetup.Visibility = System.Windows.Visibility.Visible;
             }
         }
