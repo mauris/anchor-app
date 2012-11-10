@@ -915,7 +915,8 @@
     </Style>
 
     <!--Label-->
-    <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}">
+    <Style x:Key="{x:Type TextBlock}"
+           TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="{DynamicResource MessageFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource MessageFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource MessageFontWeight}" />
