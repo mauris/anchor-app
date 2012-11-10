@@ -366,6 +366,7 @@ namespace anchor
                 // reset hosts file back to pre-Anchor usage.
                 if (File.Exists(hostFile + ".orig"))
                 {
+                    File.Delete(hostFile);
                     File.Copy(hostFile + ".orig", hostFile);
                 }
 
