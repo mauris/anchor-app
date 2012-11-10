@@ -480,7 +480,8 @@
                                                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
                                                             <TextBlock Grid.Column="1"
                                                                        Text=".dev"
-                                                                       Margin="-5, 5,0,0"
+                                                                       FontSize="13"
+                                                                       Margin="-5,2,0,0"
                                                                        Foreground="Gray"
                                                                        Cursor="IBeam" />
                                                         </Grid>
