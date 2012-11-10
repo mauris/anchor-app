@@ -113,6 +113,17 @@ namespace anchor
             changed = true;
         }
 
+        public void clear()
+        {
+            clear("anchor-host");
+        }
+
+        public void clear(string comment)
+        {
+            entries.RemoveAll(x => x.Comment == comment);
+            changed = true;
+        }
+
     }
 
     class HostEntry
