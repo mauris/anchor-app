@@ -17,8 +17,12 @@ namespace anchor
     /// <summary>
     /// Interaction logic for ToggleButton.xaml
     /// </summary>
-    public partial class ToggleButton : UserControl
+    public partial class ToggleButton : System.Windows.Controls.Primitives.ToggleButton
     {
+        public new bool IsChecked { get { return (bool)base.IsChecked; } set { base.IsChecked = value; } }
+
+        public event EventHandler Changed;
+
         public ToggleButton()
         {
             InitializeComponent();
@@ -126,27 +130,57 @@ namespace anchor
             //do something if needed
         }
 
-
-        public static readonly DependencyProperty IsCheckedProperty =
-            DependencyProperty.Register(
-            "IsChecked",
-            typeof(Boolean),
-            typeof(ToggleButton),
-            new PropertyMetadata(onCheckedChangedCallback));
-
-        public Boolean IsChecked
+        private void ToggleButton_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            get { return (Boolean)GetValue(IsCheckedProperty); }
-            set { if (value != IsChecked) SetValue(IsCheckedProperty, value); }
+            this.IsChecked = (bool)((System.Windows.Controls.Primitives.ToggleButton)sender).IsChecked;
+            if (Changed != null)
+            {
+                Changed(this, e);
+            }
+            ChangeImage();
         }
 
-        static void onCheckedChangedCallback(
-            DependencyObject dobj,
-            DependencyPropertyChangedEventArgs args)
+        private void ToggleButton_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            //do something, if needed
+            ChangeImage();
         }
 
+        private void ToggleButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            ChangeImage();
+        }
 
+        private void ChangeImage()
+        {
+            if (IsEnabled)
+            {
+                if (IsChecked)
+                {
+                    if (IsMouseOver)
+                    {
+                        ButtonImage.Source = CheckedHoverImage;
+                    }
+                    else
+                    {
+                        ButtonImage.Source = CheckedImage;
+                    }
+                }
+                else
+                {
+                    if (IsMouseOver)
+                    {
+                        ButtonImage.Source = UncheckedHoverImage;
+                    }
+                    else
+                    {
+                        ButtonImage.Source = UncheckedImage;
+                    }
+                }
+            }
+            else
+            {
+                ButtonImage.Source = DisabledImage;
+            }
+        }
     }
 }

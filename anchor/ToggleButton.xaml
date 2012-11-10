@@ -1,83 +1,17 @@
-﻿<UserControl x:Class="anchor.ToggleButton"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
-
-    <ToggleButton Background="Transparent"
-                  BorderBrush="Transparent"
-                  BorderThickness="0"
-                  IsChecked='{Binding RelativeSource={RelativeSource FindAncestor, 
-    AncestorType={x:Type ToggleButton} }, 
-    Path=IsChecked}'>
-        <ToggleButton.Template>
-            <ControlTemplate>
-                <Image x:Name="ButtonImage" Cursor="Hand">
-                    <Image.Style>
-                        <Style TargetType="{x:Type Image}">
-                            <Setter Property="Width"
-                                    Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=Width}" />
-                            <Setter Property="Height"
-                                    Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=Height}" />
-                            <Style.Triggers>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=IsChecked}"
-                                                   Value="True" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}"
-                                                   Value="True" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Source"
-                                            Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl} }, Path=CheckedImage}" />
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=IsChecked}"
-                                                   Value="True" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}"
-                                                   Value="True" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}"
-                                                   Value="True" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Source"
-                                            Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl} }, Path=CheckedHoverImage}" />
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=IsChecked}"
-                                                   Value="False" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}"
-                                                   Value="True" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Source"
-                                            Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl} }, Path=UncheckedImage}" />
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=IsChecked}"
-                                                   Value="False" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}"
-                                                   Value="True" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}"
-                                                   Value="True" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Source"
-                                            Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl} }, Path=UncheckedHoverImage}" />
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton} }, Path=IsChecked}"
-                                                   Value="False" />
-                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}"
-                                                   Value="False" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Source"
-                                            Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl} }, Path=DisabledImage}" />
-                                </MultiDataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Image.Style>
-                </Image>
-            </ControlTemplate>
-        </ToggleButton.Template>
-    </ToggleButton>
-</UserControl>
+﻿<ToggleButton x:Class="anchor.ToggleButton"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              Checked="ToggleButton_CheckedChanged"
+              Unchecked="ToggleButton_CheckedChanged"
+              IsEnabledChanged="ToggleButton_IsEnabledChanged"
+              Loaded="ToggleButton_Loaded" Cursor="Hand">
+    <ToggleButton.Template>
+        <ControlTemplate>
+            <ContentPresenter Content="{TemplateBinding Button.Content}"/>
+        </ControlTemplate>
+    </ToggleButton.Template>
+    <ToggleButton.Content>
+        <Image x:Name="ButtonImage" />
+    </ToggleButton.Content>
+</ToggleButton>
