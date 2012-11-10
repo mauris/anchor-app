@@ -35,6 +35,8 @@ namespace anchor
         
         ConfigWriter writer;
 
+        bool initialize = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -62,6 +64,7 @@ namespace anchor
             loadSettings();
             driver = new WampServer(settings.WampServerPath);
             writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
+            initialize = true;
         }
 
         private void restartApache()
@@ -284,21 +287,27 @@ namespace anchor
             if (tgbEnableDisable.IsChecked)
             {
                 lblToggleState.Text = "ON";
-                foreach (Entry entry in entries)
+                if (initialize)
                 {
-                    hostEditor.add(entry.Name + ".dev");
+                    foreach (Entry entry in entries)
+                    {
+                        hostEditor.add(entry.Name + ".dev");
+                    }
+                    hostEditor.update();
+                    writer.write(driver.ServerRootPath, entries.ToList());
+                    this.restartApache();
                 }
-                hostEditor.update();
-                writer.write(driver.ServerRootPath, entries.ToList());
-                this.restartApache();
             }
             else
             {
                 lblToggleState.Text = "OFF";
-                hostEditor.clear();
-                hostEditor.update();
-                writer.write(driver.ServerRootPath, new List<Entry>());
-                this.restartApache();
+                if (initialize)
+                {
+                    hostEditor.clear();
+                    hostEditor.update();
+                    writer.write(driver.ServerRootPath, new List<Entry>());
+                    this.restartApache();
+                }
             }
         }
     }
