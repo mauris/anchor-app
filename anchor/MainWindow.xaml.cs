@@ -152,10 +152,13 @@ namespace anchor
             else
             {
                 entries.Add(new Entry { Name = hostName, Path = path });
-                hostEditor.add(hostName + ".dev");
-                hostEditor.update();
-                writer.write(driver.ServerRootPath, entries.ToList());
-                this.restartApache();
+                if (settings.Enabled)
+                {
+                    hostEditor.add(hostName + ".dev");
+                    hostEditor.update();
+                    writer.write(driver.ServerRootPath, entries.ToList());
+                    this.restartApache();
+                }
                 lstSites.DataContext = entries;
 
                 lblNoSites.Visibility = System.Windows.Visibility.Collapsed;
@@ -193,11 +196,14 @@ namespace anchor
                 MessageBoxResult result = MessageBox.Show("Are you sure you want to delete \"" + entry.Name + ".dev\"?", "Delete Host", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    hostEditor.remove(entry.Name + ".dev");
-                    hostEditor.update();
-                    entries.Remove(entry);
-                    writer.write(driver.ServerRootPath, entries.ToList());
-                    this.restartApache();
+                    if (settings.Enabled)
+                    {
+                        hostEditor.remove(entry.Name + ".dev");
+                        hostEditor.update();
+                        entries.Remove(entry);
+                        writer.write(driver.ServerRootPath, entries.ToList());
+                        this.restartApache();
+                    }
                     lstSites.DataContext = entries;
                     if (entries.Count == 0)
                     {
