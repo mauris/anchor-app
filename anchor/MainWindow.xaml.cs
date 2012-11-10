@@ -67,7 +67,11 @@ namespace anchor
         private void restartApache()
         {
             driver.restartServer();
-            Process.Start(new ProcessStartInfo("ipconfig", "/flushdns"));
+            ProcessStartInfo dnsFlusher = new ProcessStartInfo("ipconfig", "/flushdns");
+            dnsFlusher.WindowStyle = ProcessWindowStyle.Hidden;
+            dnsFlusher.UseShellExecute = true;
+            dnsFlusher.CreateNoWindow = true;
+            Process.Start(dnsFlusher);
         }
 
         private void loadSettings()
