@@ -32,6 +32,8 @@ namespace anchor
         HostEditor hostEditor = new HostEditor(System.IO.Path.Combine(Environment.GetEnvironmentVariable("SystemRoot"), "System32\\drivers\\etc\\hosts"));
 
         Driver driver;
+        
+        ConfigWriter writer;
 
         public MainWindow()
         {
@@ -59,6 +61,7 @@ namespace anchor
             loadEntries();
             loadSettings();
             driver = new WampServer(settings.WampServerPath);
+            writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
         }
 
         private void restartApache()
@@ -144,7 +147,6 @@ namespace anchor
                 entries.Add(new Entry { Name = hostName, Path = path });
                 hostEditor.add(hostName + ".dev");
                 hostEditor.update();
-                ConfigWriter writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
                 writer.write(driver.ServerRootPath, entries.ToList());
                 this.restartApache();
                 lstSites.DataContext = entries;
@@ -187,13 +189,11 @@ namespace anchor
                     hostEditor.remove(entry.Name + ".dev");
                     hostEditor.update();
                     entries.Remove(entry);
-                    ConfigWriter writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
                     writer.write(driver.ServerRootPath, entries.ToList());
                     this.restartApache();
                     lstSites.DataContext = entries;
                     if (entries.Count == 0)
                     {
-
                         lblNoSites.Visibility = System.Windows.Visibility.Visible;
                         lstSites.Visibility = System.Windows.Visibility.Collapsed;
                     }
@@ -280,10 +280,21 @@ namespace anchor
             if (tgbEnableDisable.IsChecked)
             {
                 lblToggleState.Text = "ON";
+                foreach (Entry entry in entries)
+                {
+                    hostEditor.add(entry.Name + ".dev");
+                }
+                hostEditor.update();
+                writer.write(driver.ServerRootPath, entries.ToList());
+                this.restartApache();
             }
             else
             {
                 lblToggleState.Text = "OFF";
+                hostEditor.clear();
+                hostEditor.update();
+                writer.write(driver.ServerRootPath, new List<Entry>());
+                this.restartApache();
             }
         }
     }
