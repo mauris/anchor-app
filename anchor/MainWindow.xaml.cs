@@ -84,6 +84,8 @@ namespace anchor
                 settings.WampServerPath = @"C:\wamp";
                 settings.Enabled = true;
             }
+
+            tgbEnableDisable.IsChecked = settings.Enabled;
         }
 
         private void loadEntries()
@@ -270,6 +272,19 @@ namespace anchor
             pnlLicense.Visibility = System.Windows.Visibility.Visible;
             pnlMainContent.Visibility = System.Windows.Visibility.Collapsed;
             e.Handled = true;
+        }
+
+        private void tgbEnableDisable_Changed(object sender, EventArgs e)
+        {
+            settings.Enabled = tgbEnableDisable.IsChecked;
+            if (tgbEnableDisable.IsChecked)
+            {
+                lblToggleState.Text = "ON";
+            }
+            else
+            {
+                lblToggleState.Text = "OFF";
+            }
         }
     }
 }

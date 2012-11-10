@@ -257,13 +257,15 @@
                             <ColumnDefinition Width="auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <local:ToggleButton Margin="10,0,0,0" Width="44" Height="22"
+                        <!-- the togglebutton will be missing in x64 compilation because the x86 VS2010 can't detect -->
+                        <local:ToggleButton x:Name="tgbEnableDisable" Margin="10,0,0,0" Width="44" Height="22"
+                                        Changed="tgbEnableDisable_Changed"
                                         UncheckedImage="Assets/toggle-off-normal.png"
                                         UncheckedHoverImage="Assets/toggle-off-hover.png"
                                         CheckedImage="Assets/toggle-on-normal.png"
                                         CheckedHoverImage="Assets/toggle-on-hover.png">
                         </local:ToggleButton>
-                        <TextBlock Grid.Column="1" Margin="5,0,0,0" Foreground="White" FontSize="10" VerticalAlignment="Center" Name="lblToggleState">ON</TextBlock>
+                        <TextBlock Grid.Column="1" Margin="5,0,0,0" Foreground="White" FontSize="10" VerticalAlignment="Center" Name="lblToggleState">OFF</TextBlock>
                     </Grid>
                     <Button Name="btnAddHostToggle" Height="28" Width="28" Margin="6" Padding="0" Grid.Column="2" Click="btnAddHostToggle_Click">
                         <Button.Content>
