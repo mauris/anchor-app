@@ -70,12 +70,11 @@ namespace anchor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             string hostFile = Path.Combine(Environment.GetEnvironmentVariable("SystemRoot"), "System32\\drivers\\etc\\hosts");
             hostEditor = new HostEditor(hostFile);
 
             // makes an original backup file that will always be pre-Anchor usage.
-            if(!File.Exists(hostFile + ".orig"))
+            if (!File.Exists(hostFile + ".orig"))
             {
                 File.Copy(hostFile, hostFile + ".orig");
             }
@@ -92,8 +91,6 @@ namespace anchor
 
             loadEntries();
             loadSettings();
-            driver = new WampServer(settings.WampServerPath);
-            writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
             initialize = true;
         }
 
@@ -116,7 +113,7 @@ namespace anchor
                 {
                     throw new ArgumentNullException();
                 }
-                tgbEnableDisable.IsChecked = settings.Enabled;
+                loadSettingsValues();
             }
             catch (Exception)
             {
@@ -345,8 +342,15 @@ namespace anchor
         private void SetupSave(object sender, SettingsSaveEventArgs e)
         {
             settings = e.Settings;
-            tgbEnableDisable.IsChecked = settings.Enabled;
+            loadSettingsValues();
             pnlSetup.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void loadSettingsValues()
+        {
+            driver = new WampServer(settings.WampServerPath);
+            writer = new ConfigWriter(System.IO.Path.Combine(driver.ApacheConfigPath, "anchor.conf"));
+            tgbEnableDisable.IsChecked = settings.Enabled;
         }
 
         private void btnResetAnchor_Click(object sender, RoutedEventArgs e)
