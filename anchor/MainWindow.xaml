@@ -407,6 +407,18 @@
                                            Fill="#222"
                                            Margin="38, 0,0,0" />
                                 <local:SettingsForm x:Name="frmSettings" Save="SettingsSave" Cancel="SettingsCancel" />
+                                <Grid Margin="20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Background="#ED5C5F"
+                                            BorderBrush="#ED5C5F" Margin="0,0,5,0"
+                                            Click="btnResetAnchor_Click">Reset Anchor</Button>
+                                    <TextBlock Grid.Column="1">
+                                        After clicking "Reset", there is no point of no return.
+                                    </TextBlock>
+                                </Grid>
                             </StackPanel>
 
                             <StackPanel Grid.Row="1"

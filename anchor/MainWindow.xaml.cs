@@ -43,8 +43,25 @@ namespace anchor
 
         ~MainWindow()
         {
-            DataFile.Write("entries.bin", entries);
-            if (settings != null)
+            if (entries.Count == 0)
+            {
+                if (File.Exists("entries.bin"))
+                {
+                    File.Delete("entries.bin");
+                }
+            }
+            else
+            {
+                DataFile.Write("entries.bin", entries);
+            }
+            if (settings == null)
+            {
+                if (File.Exists("settings.bin"))
+                {
+                    File.Delete("settings.bin");
+                }
+            }
+            else
             {
                 DataFile.Write("settings.bin", settings);
             }
@@ -103,7 +120,6 @@ namespace anchor
             catch (Exception)
             {
                 pnlSetup.Visibility = System.Windows.Visibility.Visible;
-                pnlMainContent.Visibility = System.Windows.Visibility.Collapsed;
                 tgbEnableDisable.IsChecked = false;
             }
         }
@@ -234,7 +250,6 @@ namespace anchor
             btnSettings.Content = "set";
             pnlContent.Visibility = System.Windows.Visibility.Collapsed;
             pnlSettings.Visibility = System.Windows.Visibility.Visible;
-            //txtWampServerPath.Text = settings.WampServerPath;
             frmSettings.Load(settings);
             pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
         }
@@ -330,8 +345,22 @@ namespace anchor
         {
             settings = e.Settings;
             tgbEnableDisable.IsChecked = settings.Enabled;
-            pnlMainContent.Visibility = System.Windows.Visibility.Visible;
             pnlSetup.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void btnResetAnchor_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset Anchor? There is no return.", "Reset Anchor App", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                entries.Clear();
+                hostEditor.clear();
+                hostEditor.update();
+                writer.write(driver.ServerRootPath, new List<Entry>());
+                this.restartApache();
+                settings = null;
+                pnlSetup.Visibility = System.Windows.Visibility.Visible;
+            }
         }
     }
 }
