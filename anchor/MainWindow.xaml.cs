@@ -224,7 +224,8 @@ namespace anchor
             btnSettings.Content = "set";
             pnlContent.Visibility = System.Windows.Visibility.Collapsed;
             pnlSettings.Visibility = System.Windows.Visibility.Visible;
-            txtWampServerPath.Text = settings.WampServerPath;
+            //txtWampServerPath.Text = settings.WampServerPath;
+            frmSettings.Load(settings);
             pnlAddHost.Visibility = System.Windows.Visibility.Collapsed;
         }
 
@@ -233,17 +234,6 @@ namespace anchor
             btnSettings.Content = "";
             pnlContent.Visibility = System.Windows.Visibility.Visible;
             pnlSettings.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
-        private void btnSettingsSave_Click(object sender, RoutedEventArgs e)
-        {
-            settings.WampServerPath = txtWampServerPath.Text;
-            closeSettingsPanel();
-        }
-
-        private void btnSettingsCancel_Click(object sender, RoutedEventArgs e)
-        {
-            closeSettingsPanel();
         }
 
         private void btnBrowsePath_Click(object sender, RoutedEventArgs e)
@@ -315,6 +305,17 @@ namespace anchor
                     this.restartApache();
                 }
             }
+        }
+
+        private void SettingsSave(object sender, SettingsSaveEventArgs e)
+        {
+            settings.WampServerPath = e.Settings.WampServerPath;
+            closeSettingsPanel();
+        }
+
+        private void SettingsCancel(object sender, EventArgs e)
+        {
+            closeSettingsPanel();
         }
     }
 }
