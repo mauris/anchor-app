@@ -359,6 +359,15 @@ namespace anchor
                 writer.write(driver.ServerRootPath, new List<Entry>());
                 this.restartApache();
                 settings = null;
+
+                string hostFile = Path.Combine(Environment.GetEnvironmentVariable("SystemRoot"), "System32\\drivers\\etc\\hosts");
+
+                // reset hosts file back to pre-Anchor usage.
+                if (File.Exists(hostFile + ".orig"))
+                {
+                    File.Copy(hostFile + ".orig", hostFile);
+                }
+
                 pnlSetup.Visibility = System.Windows.Visibility.Visible;
             }
         }
