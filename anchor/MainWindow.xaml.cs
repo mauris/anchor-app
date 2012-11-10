@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 using anchor.Drivers;
@@ -27,7 +26,7 @@ namespace anchor
     {
         private ObservableCollection<Entry> entries = new ObservableCollection<Entry>();
 
-        private Settings settings = new Settings();
+        private Settings settings;
 
         HostEditor hostEditor;
 
@@ -45,7 +44,10 @@ namespace anchor
         ~MainWindow()
         {
             DataFile.Write("entries.bin", entries);
-            DataFile.Write("settings.bin", settings);
+            if (settings != null)
+            {
+                DataFile.Write("settings.bin", settings);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -324,6 +326,14 @@ namespace anchor
         private void SettingsCancel(object sender, EventArgs e)
         {
             closeSettingsPanel();
+        }
+
+        private void SetupSave(object sender, SettingsSaveEventArgs e)
+        {
+            settings.WampServerPath = e.Settings.WampServerPath;
+            tgbEnableDisable.IsChecked = settings.Enabled;
+            pnlMainContent.Visibility = System.Windows.Visibility.Visible;
+            pnlSetup.Visibility = System.Windows.Visibility.Collapsed;
         }
     }
 }

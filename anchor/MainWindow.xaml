@@ -256,6 +256,20 @@
         <Grid Name="pnlSetup"
               Visibility="Collapsed">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <StackPanel Margin="20">
+                        <TextBlock FontSize="18" Margin="0,0,0,5">Welcome to Anchor</TextBlock>
+                        <TextBlock>a marvellously lightweight app for managing local websites</TextBlock>
+                        <TextBlock Margin="0,30,0,0">To let Anchor help you start making development easier with shorter URLs, first enter the full path name to the WampServer installation folder.</TextBlock>
+                    </StackPanel>
+                    <local:SettingsForm IsCancellable="False"
+                                        Save="SetupSave" />
+                    <TextBlock Margin="20" FontSize="10">
+                        By clicking the "Save" button above and/or retaining a copy of Anchor on your computer,
+                        you agree to the terms stated in the <Hyperlink Foreground="#94DCF2" NavigateUri="#" RequestNavigate="License_RequestNavigate">Licenses</Hyperlink>
+                        that concerns your usage of Anchor.                                    
+                    </TextBlock>
+                </StackPanel>
             </ScrollViewer>
         </Grid>
         <Grid Name="pnlLicense"
