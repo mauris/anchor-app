@@ -29,7 +29,7 @@ namespace anchor
 
         private Settings settings = new Settings();
 
-        HostEditor hostEditor = new HostEditor(System.IO.Path.Combine(Environment.GetEnvironmentVariable("SystemRoot"), "System32\\drivers\\etc\\hosts"));
+        HostEditor hostEditor;
 
         Driver driver;
         
@@ -50,6 +50,16 @@ namespace anchor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            string hostFile = Path.Combine(Environment.GetEnvironmentVariable("SystemRoot"), "System32\\drivers\\etc\\hosts");
+            hostEditor = new HostEditor(hostFile);
+
+            // makes an original backup file that will always be pre-Anchor usage.
+            if(!File.Exists(hostFile + ".orig"))
+            {
+                File.Copy(hostFile, hostFile + ".orig");
+            }
+
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.ProductVersion;
