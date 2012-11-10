@@ -147,7 +147,6 @@ namespace anchor
 
         private void btnAddHostToggle_Click(object sender, RoutedEventArgs e)
         {
-            lstSites.SelectedIndex = -1;
             if (pnlAddHost.Visibility == System.Windows.Visibility.Collapsed)
             {
                 closeSettingsPanel();
@@ -376,6 +375,11 @@ namespace anchor
 
                 pnlSetup.Visibility = System.Windows.Visibility.Visible;
             }
+        }
+
+        private void lstSites_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lstSites.SelectedIndex = -1;
         }
     }
 }

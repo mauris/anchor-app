@@ -570,6 +570,7 @@
                                      ItemsSource="{Binding}"
                                      ItemContainerStyle="{StaticResource ContainerStyle}"
                                      HorizontalContentAlignment="Stretch"
+                                     LostFocus="lstSites_LostFocus"
                                      Visibility="Collapsed"
                                      Padding="0"
                                      Margin="0">
