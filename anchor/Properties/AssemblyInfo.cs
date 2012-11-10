@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("anchor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Anchor for Windows")]
+[assembly: AssemblyDescription("a marvellously lightweight app for managing local websites")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("anchor")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCompany("Sam-Mauris Yong")]
+[assembly: AssemblyProduct("Anchor")]
+[assembly: AssemblyCopyright("Copyright © Sam-Mauris Yong 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
