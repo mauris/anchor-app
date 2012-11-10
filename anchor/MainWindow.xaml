@@ -332,11 +332,11 @@
                             </StackPanel>
                         </Grid>
                     </Grid>
-                    <StackPanel Name="pnlContent">
-                        <StackPanel.Background>
+                    <Grid Name="pnlContent">
+                        <Grid.Background>
                             <ImageBrush ImageSource="Assets/toolbar-shadow.png" Stretch="None" AlignmentX="Left"
                                         AlignmentY="Top" Viewport="0,0,20,100000" ViewportUnits="Absolute" TileMode="FlipX" RenderOptions.EdgeMode="Aliased" />
-                        </StackPanel.Background>
+                        </Grid.Background>
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
@@ -409,8 +409,7 @@
                                 </ListBox.Template>
                             </ListBox>
                         </Grid>
-                    </StackPanel>
-
+                    </Grid>
                 </Grid>
             </ScrollViewer>
             <!-- end of main content -->
