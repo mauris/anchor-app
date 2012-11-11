@@ -82,6 +82,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="0"
+                                Focusable="False"
                                 Margin="0, 0, 15, 0"
                                 Cursor="Hand"
                                 Name="btnHostOpen"
@@ -114,6 +115,7 @@
                             </Button.ContentTemplate>
                         </Button>
                         <Button Grid.Column="1"
+                                Focusable="False"
                                 Margin="0, 0, 15, 0"
                                 Cursor="Hand"
                                 Name="btnHostBrowse"
@@ -146,6 +148,7 @@
                             </Button.ContentTemplate>
                         </Button>
                         <Button Grid.Column="2"
+                                Focusable="False"
                                 Margin="0, 0, 15, 0"
                                 Cursor="Hand"
                                 Name="btnHostDelete"
