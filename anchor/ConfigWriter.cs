@@ -31,7 +31,8 @@ namespace anchor
                 writer.WriteLine("    DocumentRoot '" + entry.Path + "'");
                 writer.WriteLine("</VirtualHost>");
                 writer.WriteLine("<Directory \"" + entry.Path + "\">");
-                writer.WriteLine("    Deny from all");
+                writer.WriteLine("    AllowOverride All");
+                writer.WriteLine("    Deny from All");
                 writer.WriteLine("    Allow from 127.0.0.1");
                 writer.WriteLine("    Order Deny,Allow");
                 writer.WriteLine("</Directory>");
