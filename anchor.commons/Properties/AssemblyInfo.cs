@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("anchor.commons")]
 [assembly: AssemblyDescription("Anchor App Common Library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sam-Mauris Yong")]
+[assembly: AssemblyCompany("HeartCode Singapore")]
 [assembly: AssemblyProduct("anchor.commons")]
-[assembly: AssemblyCopyright("Copyright © Sam-Mauris Yong 2012")]
+[assembly: AssemblyCopyright("Copyright © HeartCode Singapore 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

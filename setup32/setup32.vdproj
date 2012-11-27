@@ -34,12 +34,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C088F5547AD494E71443F8B65B5FABCD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9D32913A69424F1D9DD38D44D13AA39E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -47,6 +41,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8335FECA48225D197813D64F7E186AA0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C088F5547AD494E71443F8B65B5FABCD"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -67,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -83,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -229,7 +245,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Anchor for Windows"
+        "ProductName" = "8:Anchor App for Windows"
         "ProductCode" = "8:{3726B97E-2858-435A-AB73-89F074C29491}"
         "PackageCode" = "8:{DADE66D5-22C9-482F-9649-EEFA1367C81F}"
         "UpgradeCode" = "8:{B284628F-409E-4C53-86F0-EBDC6C43CA09}"
@@ -239,15 +255,15 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Sam-Mauris Yong"
+        "Manufacturer" = "8:HeartCode Singapore"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:setup32"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Sam-Mauris Yong"
+        "ARPCONTACT" = "8:HeartCode Singapore"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:a marvellously lightweight app for managing local websites"
-        "ARPURLINFOABOUT" = "8:http://mauris.sg/"
+        "ARPURLINFOABOUT" = "8:http://heartcode.sg/"
         "ARPPRODUCTICON" = "8:_9D32913A69424F1D9DD38D44D13AA39E"
         "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"

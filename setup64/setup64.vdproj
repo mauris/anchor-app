@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1F1998E9FCA2E5FA451E08B8F4B36279"
+        "OwnerKey" = "8:_498F33F97B214A599CCDD7272E72FF39"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3C2308FB68372A767AEA68DD90550EA5"
         "OwnerKey" = "8:_498F33F97B214A599CCDD7272E72FF39"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,18 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_77FEC8377EC9CC395B8399E470591ECF"
-        "OwnerKey" = "8:_498F33F97B214A599CCDD7272E72FF39"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_77FEC8377EC9CC395B8399E470591ECF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_498F33F97B214A599CCDD7272E72FF39"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,6 +41,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_3C2308FB68372A767AEA68DD90550EA5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1F1998E9FCA2E5FA451E08B8F4B36279"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -67,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -83,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -112,20 +128,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C2308FB68372A767AEA68DD90550EA5"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1F1998E9FCA2E5FA451E08B8F4B36279"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:INIFileParser, Version=1.7.1.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:anchor.commons, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_3C2308FB68372A767AEA68DD90550EA5"
+                    "_1F1998E9FCA2E5FA451E08B8F4B36279"
                     {
-                    "Name" = "8:INIFileParser.dll"
+                    "Name" = "8:anchor.commons.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:INIFileParser.dll"
+            "SourcePath" = "8:anchor.commons.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_512EED7178574DB4B39628B925ED61D3"
@@ -143,20 +159,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_77FEC8377EC9CC395B8399E470591ECF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C2308FB68372A767AEA68DD90550EA5"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:anchor.commons, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:INIFileParser, Version=1.7.1.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_77FEC8377EC9CC395B8399E470591ECF"
+                    "_3C2308FB68372A767AEA68DD90550EA5"
                     {
-                    "Name" = "8:anchor.commons.dll"
+                    "Name" = "8:INIFileParser.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:anchor.commons.dll"
+            "SourcePath" = "8:INIFileParser.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_512EED7178574DB4B39628B925ED61D3"
@@ -229,7 +245,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Anchor for Windows"
+        "ProductName" = "8:Anchor App for Windows"
         "ProductCode" = "8:{40F00182-291C-4DA2-8022-46FF45C68092}"
         "PackageCode" = "8:{E9E00D97-BA7A-4235-B407-DD710EB83A50}"
         "UpgradeCode" = "8:{DFBCC44D-7A24-4831-85A5-6DA59D7A7FED}"
@@ -239,15 +255,15 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Sam-Mauris Yong"
+        "Manufacturer" = "8:HeartCode Singapore"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:setup64"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Sam-Mauris Yong"
+        "ARPCONTACT" = "8:HeartCode Singapore"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:a marvellously lightweight app for managing local websites"
-        "ARPURLINFOABOUT" = "8:http://mauris.sg/"
+        "ARPURLINFOABOUT" = "8:http://heartcode.sg/"
         "ARPPRODUCTICON" = "8:_498F33F97B214A599CCDD7272E72FF39"
         "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"
@@ -766,7 +782,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_498F33F97B214A599CCDD7272E72FF39"
             {
-            "SourcePath" = "8:..\\anchor\\obj\\x64\\Release\\anchor.exe"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_512EED7178574DB4B39628B925ED61D3"

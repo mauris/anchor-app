@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("Anchor for Windows")]
 [assembly: AssemblyDescription("a marvellously lightweight app for managing local websites")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sam-Mauris Yong")]
+[assembly: AssemblyCompany("HeartCode Singapore")]
 [assembly: AssemblyProduct("Anchor")]
-[assembly: AssemblyCopyright("Copyright © Sam-Mauris Yong 2012")]
+[assembly: AssemblyCopyright("Copyright © HeartCode Singapore 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
