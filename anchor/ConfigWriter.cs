@@ -23,15 +23,15 @@ namespace anchor
                     writer.WriteLine("NameVirtualHost 127.0.0.1");
                     writer.WriteLine("<VirtualHost 127.0.0.1>");
                     writer.WriteLine("    ServerName localhost");
-                    writer.WriteLine("    DocumentRoot '" + root + "'");
+                    writer.WriteLine("    DocumentRoot '" + root.Replace("\\", "\\\\") + "'");
                     writer.WriteLine("</VirtualHost>");
                     foreach(Entry entry in entries)
                     {
                         writer.WriteLine("<VirtualHost 127.0.0.1>");
                         writer.WriteLine("    ServerName " + entry.Name + ".dev");
-                        writer.WriteLine("    DocumentRoot '" + entry.Path + "'");
+                        writer.WriteLine("    DocumentRoot '" + entry.Path.Replace("\\", "\\\\") + "'");
                         writer.WriteLine("</VirtualHost>");
-                        writer.WriteLine("<Directory \"" + entry.Path + "\">");
+                        writer.WriteLine("<Directory \"" + entry.Path.Replace("\\", "\\\\") + "\">");
                         writer.WriteLine("    AllowOverride All");
                         writer.WriteLine("    Deny from All");
                         writer.WriteLine("    Allow from 127.0.0.1");
